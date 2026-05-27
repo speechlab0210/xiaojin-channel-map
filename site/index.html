@@ -2,97 +2,183 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>李宏毅老師 YouTube 課程地圖｜小金製作</title>
+<title>李宏毅老師 YouTube 課程地圖｜一張圖看完 482 部影片</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="把李宏毅老師 YouTube 頻道全部 482 部教學影片，整理出影片之間「上次講過」、「之前介紹過」的相互引用，畫成一張可互動的課程地圖。">
-<link rel="stylesheet" href="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.umd.js" as="script">
+<meta name="description" content="李宏毅老師 YouTube 頻道 482 部教學影片之間的引用關係。每個節點是一部影片，每條線是『上次講過』、『之前介紹過』。點節點看詳情、直接連到 YouTube。">
+<meta property="og:title" content="李宏毅老師 YouTube 課程地圖">
+<meta property="og:description" content="把 482 部教學影片裡『之前提過』『上次講過』全部串成一張可互動的地圖。">
+<meta property="og:type" content="website">
 <script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
-<script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
-<script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
 <style>
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "PingFang TC", sans-serif; background: #0f1419; color: #e6e6e6; }
-  #app { display: grid; grid-template-columns: 260px 1fr; grid-template-rows: 56px 1fr; height: 100vh; }
-  @media (max-width: 700px) { #app { grid-template-columns: 200px 1fr; } }
-  header { grid-column: 1 / 3; background: #1a1f2e; border-bottom: 1px solid #2a3046; padding: 8px 16px; display: flex; align-items: center; gap: 16px; }
-  header h1 { margin: 0; font-size: 16px; font-weight: 600; }
-  header .meta { color: #8a93a8; font-size: 12px; }
-  header .credit { margin-left: auto; color: #8a93a8; font-size: 11px; }
-  aside { background: #131826; border-right: 1px solid #2a3046; padding: 12px; overflow-y: auto; }
-  aside h2 { margin: 0 0 8px 0; font-size: 13px; color: #aab2c8; text-transform: uppercase; letter-spacing: 0.5px; }
-  aside .row { margin-bottom: 16px; }
-  aside .stats { font-size: 12px; color: #c5cdd6; }
-  aside .stats div { margin: 3px 0; }
-  aside input { width: 100%; padding: 6px 8px; background: #0f1419; color: #e6e6e6; border: 1px solid #2a3046; border-radius: 4px; font-size: 12px; }
-  aside .courses { font-size: 11px; }
-  aside .courses label { display: block; padding: 3px 0; cursor: pointer; }
-  aside .courses input[type=checkbox] { margin-right: 6px; }
-  aside .courses .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
-  #cy { background: #0f1419; }
-  #details { position: absolute; top: 70px; right: 14px; width: 380px; max-height: 80vh; overflow-y: auto; background: #1a1f2e; border: 1px solid #2a3046; border-radius: 8px; padding: 14px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,.5); }
-  #details h3 { margin: 0 0 6px 0; font-size: 14px; }
-  #details a { color: #8ab4f8; text-decoration: none; word-break: break-all; }
-  #details .field { margin: 8px 0; font-size: 12px; }
-  #details .field label { color: #8a93a8; display: block; margin-bottom: 2px; }
-  #details .close { float: right; cursor: pointer; color: #8a93a8; background: none; border: none; font-size: 14px; }
-  #details .ref-list { margin-top: 12px; }
-  #details .ref-card { background: #0f1419; border: 1px solid #2a3046; border-radius: 4px; padding: 6px 8px; margin: 4px 0; font-size: 11px; }
-  #details .ref-card .arrow { color: #8a93a8; font-size: 10px; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif; background: #0f1419; color: #e6e6e6; overflow: hidden; }
+  a { color: #8ab4f8; }
+
+  /* Layout */
+  #app { display: grid; grid-template-columns: 280px 1fr; grid-template-rows: 64px 1fr; height: 100vh; }
+
+  /* Header */
+  header { grid-column: 1 / 3; background: linear-gradient(180deg, #1a1f2e, #131826); border-bottom: 1px solid #2a3046; padding: 0 20px; display: flex; align-items: center; gap: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 10; }
+  header h1 { margin: 0; font-size: 18px; font-weight: 700; color: #fff; }
+  header h1 .lobster { display: inline-block; transform: rotate(-12deg); margin-right: 4px; }
+  header .meta { color: #fbbf24; font-size: 13px; font-weight: 500; }
+  header .right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  header a.channel { color: #8ab4f8; text-decoration: none; font-size: 13px; border: 1px solid #2a3046; padding: 5px 10px; border-radius: 6px; }
+  header a.channel:hover { background: #2a3046; }
+  header .credit { color: #5a6987; font-size: 11px; line-height: 1.3; max-width: 180px; text-align: right; }
+  header .help-btn { background: #1a1f2e; color: #8ab4f8; border: 1px solid #2a3046; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  header .help-btn:hover { background: #2a3046; }
+
+  /* Sidebar */
+  aside { background: #131826; border-right: 1px solid #2a3046; padding: 16px 14px; overflow-y: auto; }
+  aside h2 { margin: 0 0 8px 0; font-size: 11px; color: #aab2c8; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+  aside .row { margin-bottom: 18px; }
+  aside .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  aside .stat-grid .stat { background: #0f1419; padding: 8px 10px; border-radius: 6px; border: 1px solid #2a3046; }
+  aside .stat-grid .stat .num { font-size: 18px; color: #fbbf24; font-weight: 700; }
+  aside .stat-grid .stat .lbl { font-size: 10px; color: #8a93a8; margin-top: 2px; }
+  aside input[type=text] { width: 100%; padding: 8px 10px; background: #0f1419; color: #e6e6e6; border: 1px solid #2a3046; border-radius: 6px; font-size: 13px; outline: none; }
+  aside input[type=text]:focus { border-color: #8ab4f8; }
+  aside .courses { font-size: 12px; max-height: 250px; overflow-y: auto; }
+  aside .courses label { display: flex; align-items: center; padding: 4px 0; cursor: pointer; color: #c5cdd6; }
+  aside .courses label:hover { color: #fff; }
+  aside .courses input[type=checkbox] { margin-right: 8px; }
+  aside .courses .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 8px; flex-shrink: 0; }
+  aside .footer-note { font-size: 11px; color: #5a6987; line-height: 1.7; border-top: 1px solid #2a3046; padding-top: 12px; margin-top: 8px; }
+
+  /* Canvas */
+  #cy { background: radial-gradient(ellipse at center, #1a1f3a 0%, #0f1419 70%); cursor: grab; }
+  #cy:active { cursor: grabbing; }
+  .tooltip { position: absolute; background: rgba(15, 20, 25, 0.95); border: 1px solid #2a3046; padding: 6px 10px; border-radius: 6px; font-size: 12px; color: #e6e6e6; pointer-events: none; z-index: 100; max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,0.5); display: none; }
+
+  /* Details panel */
+  #details { position: absolute; top: 84px; right: 16px; width: 400px; max-height: calc(100vh - 100px); overflow-y: auto; background: #1a1f2e; border: 1px solid #2a3046; border-radius: 10px; padding: 16px; display: none; box-shadow: 0 8px 32px rgba(0,0,0,0.6); z-index: 50; }
+  #details .close { float: right; cursor: pointer; color: #8a93a8; background: none; border: none; font-size: 18px; padding: 0 4px; line-height: 1; }
+  #details .close:hover { color: #fff; }
+  #details h3 { margin: 0 0 4px 0; font-size: 15px; color: #fff; line-height: 1.35; padding-right: 24px; }
+  #details .course-tag { display: inline-block; background: #2a3046; color: #aab2c8; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-top: 6px; }
+  #details .yt-btn { display: block; background: #ff0000; color: #fff !important; text-align: center; padding: 10px; border-radius: 6px; margin: 14px 0 4px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  #details .yt-btn:hover { background: #cc0000; }
+  #details .yt-btn .icon { display: inline-block; margin-right: 6px; }
+  #details .meta-line { font-size: 11px; color: #8a93a8; margin-top: 6px; }
+  #details .section-h { font-size: 11px; color: #aab2c8; text-transform: uppercase; letter-spacing: 0.5px; margin: 18px 0 6px; }
+  #details .ref-card { background: #0f1419; border: 1px solid #2a3046; border-radius: 6px; padding: 8px 10px; margin: 5px 0; font-size: 12px; }
+  #details .ref-card .head { color: #8a93a8; font-size: 10px; margin-bottom: 3px; }
+  #details .ref-card .title { color: #fff; margin: 3px 0; }
+  #details .ref-card .title a { color: #8ab4f8; text-decoration: none; }
+  #details .ref-card .title a:hover { text-decoration: underline; }
+  #details .ref-card .ts-link { color: #aab2c8; font-size: 11px; margin: 3px 0; }
+  #details .ref-card .ts-link a { color: #fbbf24; text-decoration: none; }
+  #details .ref-card .quote { color: #c5cdd6; margin-top: 4px; padding: 4px 6px; background: rgba(138,180,248,0.08); border-left: 2px solid #5a6987; font-size: 11px; line-height: 1.5; }
+  #details .ref-card .visual-ev { font-size: 11px; color: #aab2c8; margin-top: 4px; padding: 4px 6px; background: rgba(74,222,128,0.06); border-left: 2px solid #4ade80; line-height: 1.5; }
   #details .conf-HIGH { color: #4ade80; }
   #details .conf-MEDIUM { color: #fbbf24; }
   #details .conf-LOW { color: #f87171; }
-  .footer-note { font-size: 11px; color: #8a93a8; margin-top: 10px; line-height: 1.6; }
+  #details .vbadge-YES { color: #4ade80; }
+  #details .vbadge-NO { color: #f87171; }
+  #details .vbadge-PARTIAL { color: #fbbf24; }
+
+  /* Welcome modal */
+  .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 200; }
+  .modal-bg.show { display: flex; }
+  .modal { background: #1a1f2e; border: 1px solid #2a3046; border-radius: 12px; padding: 28px; max-width: 540px; box-shadow: 0 12px 48px rgba(0,0,0,0.8); }
+  .modal h2 { margin: 0 0 14px; font-size: 22px; color: #fff; }
+  .modal p { font-size: 14px; color: #c5cdd6; line-height: 1.7; margin: 8px 0; }
+  .modal .legend { display: flex; gap: 18px; margin: 18px 0; font-size: 12px; color: #aab2c8; }
+  .modal .legend-item { display: flex; align-items: center; gap: 6px; }
+  .modal .legend-item .dot { width: 14px; height: 14px; border-radius: 50%; background: #ed7d31; }
+  .modal .legend-item .line { width: 24px; height: 2px; background: #5a6987; }
+  .modal button.go { background: #fbbf24; color: #0f1419; border: none; padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 12px; }
+  .modal button.go:hover { background: #f59e0b; }
+  .modal .small { font-size: 11px; color: #5a6987; margin-top: 14px; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #app { grid-template-columns: 1fr; grid-template-rows: 56px auto 1fr; }
+    aside { max-height: 200px; padding: 10px; }
+    aside .row { margin-bottom: 12px; }
+    aside .stat-grid { grid-template-columns: repeat(4, 1fr); }
+    #details { left: 8px; right: 8px; top: 70px; width: auto; }
+    header h1 { font-size: 14px; }
+    header .credit { display: none; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Welcome modal -->
+<div class="modal-bg" id="welcome">
+  <div class="modal">
+    <h2><span style="display:inline-block;transform:rotate(-12deg);">🦞</span> 歡迎</h2>
+    <p>李宏毅老師的 YouTube 頻道有 <b style="color:#fbbf24;">482 部影片</b>。新影片裡他常常說「我們之前提過」、「上次講過」— 但是哪一支？</p>
+    <p>我把整個頻道掃過一遍，找出所有引用關係，畫成這張地圖。</p>
+    <div class="legend">
+      <div class="legend-item"><span class="dot"></span> 每個圓 = 一部影片</div>
+      <div class="legend-item"><span class="line"></span> 連線 = 引用</div>
+    </div>
+    <p style="font-size:13px;"><b>怎麼用：</b></p>
+    <p style="font-size:13px;color:#aab2c8;">• 滑鼠拖曳、滾輪縮放<br>
+    • 點任何節點 → 看詳情 + 跳到 YouTube<br>
+    • <b style="color:#fbbf24;">雙擊節點</b> → 直接開 YouTube<br>
+    • 左側欄可搜尋影片標題、過濾課程</p>
+    <button class="go" onclick="document.getElementById('welcome').classList.remove('show'); localStorage.setItem('seen_intro','1');">看地圖 →</button>
+    <div class="small">小金 AI 製作 · 大金老師沒檢查過、AI 可能有錯</div>
+  </div>
+</div>
+
 <div id="app">
   <header>
-    <h1>李宏毅老師 YT 課程地圖</h1>
+    <h1><span class="lobster">🦞</span> 李宏毅老師 YT 課程地圖</h1>
     <span class="meta" id="header-meta">載入中…</span>
-    <span class="credit">小金製作 · 大金老師沒檢查過 AI 可能有錯</span>
+    <div class="right">
+      <a class="channel" href="https://www.youtube.com/@HungyiLeeNTU" target="_blank">📺 看頻道</a>
+      <button class="help-btn" onclick="document.getElementById('welcome').classList.add('show');">？ 說明</button>
+      <span class="credit">小金製作 · 大金老師沒檢查過 AI 可能有錯</span>
+    </div>
   </header>
   <aside>
     <div class="row">
-      <h2>搜尋</h2>
-      <input id="search" placeholder="輸入影片標題關鍵字..." />
-    </div>
-    <div class="row stats" id="stats"></div>
-    <div class="row">
-      <h2>顯示模式</h2>
-      <label><input type="radio" name="layout" value="cose" checked> 力導向 (自動聚類)</label><br>
-      <label><input type="radio" name="layout" value="grid"> 網格 (依課程)</label><br>
-      <label><input type="radio" name="layout" value="circle"> 圓形 (時間軸)</label><br>
+      <h2>🔎 搜尋影片</h2>
+      <input id="search" type="text" placeholder="輸入標題關鍵字..." />
     </div>
     <div class="row">
-      <h2>連線過濾</h2>
-      <label><input type="checkbox" id="filter-high" checked> HIGH confidence</label><br>
-      <label><input type="checkbox" id="filter-medium" checked> MEDIUM confidence</label><br>
-      <label><input type="checkbox" id="filter-low" checked> LOW confidence</label><br>
+      <h2>📊 概況</h2>
+      <div class="stat-grid" id="stats"></div>
     </div>
     <div class="row">
-      <h2>課程過濾</h2>
+      <h2>🎨 顯示方式</h2>
+      <label style="font-size:12px;color:#c5cdd6;"><input type="radio" name="layout" value="cose" checked> 力導向 (聚類)</label><br>
+      <label style="font-size:12px;color:#c5cdd6;"><input type="radio" name="layout" value="grid"> 網格 (依課程)</label><br>
+      <label style="font-size:12px;color:#c5cdd6;"><input type="radio" name="layout" value="circle"> 圓形</label>
+    </div>
+    <div class="row">
+      <h2>📚 課程過濾</h2>
       <div class="courses" id="courses"></div>
     </div>
     <div class="footer-note">
-      Hover 看標題、點擊看詳情與所有引用<br>
-      箭頭：A→B 表示 A 影片裡提到 B
+      <b>🦞 小金</b> 是李宏毅老師養的 AI 龍蝦。<br>
+      這張地圖由小金讀完字幕、看投影片畫面後自動建立。<br>
+      <a href="https://github.com/speechlab0210/xiaojin-channel-map" target="_blank">原始碼 GitHub</a>
     </div>
   </aside>
   <div id="cy"></div>
 </div>
+
 <div id="details">
   <button class="close" onclick="document.getElementById('details').style.display='none'">✕</button>
   <h3 id="d-title"></h3>
-  <div class="field"><label>YouTube</label><a id="d-link" target="_blank"></a></div>
-  <div class="field"><label>課程</label><span id="d-course"></span></div>
-  <div class="field"><label>長度</label><span id="d-duration"></span></div>
-  <div class="ref-list">
-    <h2 style="font-size:12px;color:#aab2c8;margin:14px 0 4px;">本片提到的其他影片 (outgoing)</h2>
-    <div id="d-outgoing"></div>
-    <h2 style="font-size:12px;color:#aab2c8;margin:14px 0 4px;">被其他影片提到 (incoming)</h2>
-    <div id="d-incoming"></div>
-  </div>
+  <span class="course-tag" id="d-course"></span>
+  <a class="yt-btn" id="d-link" target="_blank"><span class="icon">▶</span> 看 YouTube 影片</a>
+  <div class="meta-line" id="d-duration"></div>
+
+  <div class="section-h">本片提到的其他影片</div>
+  <div id="d-outgoing"></div>
+
+  <div class="section-h">被其他影片提到</div>
+  <div id="d-incoming"></div>
 </div>
+
+<div class="tooltip" id="tooltip"></div>
 
 <script>
 const COURSE_COLORS = [
@@ -104,61 +190,62 @@ const COURSE_COLORS = [
 ];
 
 async function init() {
+  // Show welcome on first visit
+  if (!localStorage.getItem('seen_intro')) {
+    document.getElementById('welcome').classList.add('show');
+  }
+
   const data = await fetch('graph.json').then(r => r.json());
   document.getElementById('header-meta').textContent =
     `${data.metadata.video_count} 部影片 · ${data.metadata.edge_count} 條引用`;
 
-  // course -> color map
   const courseColor = {};
   data.metadata.playlists.forEach((p, i) => { courseColor[p.id] = COURSE_COLORS[i % COURSE_COLORS.length]; });
 
-  // Stats
   const inDeg = {}, outDeg = {};
   data.edges.forEach(e => { inDeg[e.target] = (inDeg[e.target]||0)+1; outDeg[e.source] = (outDeg[e.source]||0)+1; });
+  const connectedCount = Object.keys({...inDeg, ...outDeg}).length;
+
   document.getElementById('stats').innerHTML = `
-    <div>節點數 (有引用)：<b>${Object.keys({...inDeg, ...outDeg}).length}</b></div>
-    <div>引用邊數：<b>${data.edges.length}</b></div>
-    <div>HIGH confidence: <b>${data.edges.filter(e=>e.confidence==='HIGH').length}</b></div>
-    <div>MEDIUM: <b>${data.edges.filter(e=>e.confidence==='MEDIUM').length}</b></div>
-    <div>LOW: <b>${data.edges.filter(e=>e.confidence==='LOW').length}</b></div>
+    <div class="stat"><div class="num">${data.metadata.video_count}</div><div class="lbl">總影片</div></div>
+    <div class="stat"><div class="num">${connectedCount}</div><div class="lbl">有連線</div></div>
+    <div class="stat"><div class="num">${data.metadata.edge_count}</div><div class="lbl">引用邊</div></div>
+    <div class="stat"><div class="num">${data.metadata.playlists.length}</div><div class="lbl">系列</div></div>
   `;
 
   // Course filter
   const courses = data.metadata.playlists;
   const courseEl = document.getElementById('courses');
   courseEl.innerHTML = courses.map(p =>
-    `<label><input type="checkbox" data-pid="${p.id}" checked><span class="swatch" style="background:${courseColor[p.id]}"></span>${p.title.slice(0,30)}${p.title.length>30?'…':''} (${p.video_count})</label>`
+    `<label><input type="checkbox" data-pid="${p.id}" checked><span class="swatch" style="background:${courseColor[p.id]}"></span>${p.title.slice(0,28)}${p.title.length>28?'…':''} (${p.video_count})</label>`
   ).join('');
 
-  // Build Cytoscape elements
-  // Only include nodes that have at least one edge (otherwise force-directed is dominated by isolates)
+  // Build cytoscape elements (only nodes that have edges)
   const referenced = new Set();
   data.edges.forEach(e => { referenced.add(e.source); referenced.add(e.target); });
+  const incomingByNode = {};
+  data.edges.forEach(e => { incomingByNode[e.target] = (incomingByNode[e.target]||0)+1; });
 
   const cyEls = [];
   const nodesById = {};
   data.nodes.forEach(n => { nodesById[n.id] = n; });
 
-  // Compute incoming reference count for sizing
-  const incomingByNode = {};
-  data.edges.forEach(e => { incomingByNode[e.target] = (incomingByNode[e.target]||0)+1; });
-
   data.nodes.forEach(n => {
-    if (!referenced.has(n.id)) return; // skip lonely nodes for now (later: optional show)
+    if (!referenced.has(n.id)) return;
     const inc = incomingByNode[n.id] || 0;
-    // Short label: extract "第N講" if present, else first 10 chars
     const m = n.title.match(/第\s*[0-9一二三四五六七八九十]+\s*[講課堂]/);
-    let shortLabel = m ? m[0] : n.title.replace(/【[^】]+】/g, '').slice(0, 10);
+    const shortLabel = m ? m[0] : n.title.replace(/【[^】]+】/g, '').slice(0, 10);
     cyEls.push({
       data: {
         id: n.id,
         label: shortLabel,
         title: n.title,
+        url: n.url,
         course: n.course,
         courseId: n.course_id,
         color: courseColor[n.course_id] || '#888',
         position: n.course_position,
-        size: 18 + Math.min(40, inc * 3),
+        size: 20 + Math.min(40, inc * 3),
         incomingCount: inc,
       },
     });
@@ -176,6 +263,8 @@ async function init() {
         category: e.category,
         keyword: e.keyword_match,
         context: e.context,
+        visual_verified: e.visual_verified,
+        visual_evidence: e.visual_evidence,
       },
     });
   });
@@ -189,21 +278,22 @@ async function init() {
         style: {
           'background-color': 'data(color)',
           'label': 'data(label)',
-          'color': '#e6e6e6',
-          'font-size': 9,
+          'color': '#fff',
+          'font-size': 11,
+          'font-weight': 'bold',
           'font-family': '"Microsoft JhengHei","PingFang TC",sans-serif',
           'text-valign': 'bottom',
           'text-halign': 'center',
-          'text-margin-y': 3,
+          'text-margin-y': 4,
           'width': 'data(size)',
           'height': 'data(size)',
           'text-wrap': 'wrap',
-          'text-max-width': 100,
-          'border-width': 1.5,
+          'text-max-width': 120,
+          'border-width': 2,
           'border-color': '#0f1419',
           'text-background-color': '#0f1419',
           'text-background-opacity': 0.85,
-          'text-background-padding': 2,
+          'text-background-padding': 3,
           'text-opacity': 0,
         },
       },
@@ -220,32 +310,17 @@ async function init() {
           'target-arrow-shape': 'triangle',
           'curve-style': 'bezier',
           'opacity': 0.55,
+          'arrow-scale': 0.8,
         },
       },
-      {
-        selector: 'edge[confidence = "HIGH"]',
-        style: { 'line-color': '#5a6987', 'target-arrow-color': '#8ab4f8', 'opacity': 0.75 },
-      },
-      {
-        selector: 'edge[confidence = "MEDIUM"]',
-        style: { 'line-color': '#3f4a63', 'target-arrow-color': '#fbbf24', 'opacity': 0.55 },
-      },
-      {
-        selector: 'edge[confidence = "LOW"]',
-        style: { 'line-color': '#3f4a63', 'target-arrow-color': '#f87171', 'opacity': 0.4, 'line-style': 'dashed' },
-      },
-      {
-        selector: 'node:selected',
-        style: { 'border-width': 3, 'border-color': '#8ab4f8' },
-      },
-      {
-        selector: '.highlighted',
-        style: { 'border-width': 3, 'border-color': '#fbbf24', 'background-color': '#fbbf24' },
-      },
-      {
-        selector: '.faded',
-        style: { 'opacity': 0.15 },
-      },
+      { selector: 'edge[confidence = "HIGH"]', style: { 'line-color': '#5a6987', 'target-arrow-color': '#8ab4f8', 'opacity': 0.7 } },
+      { selector: 'edge[confidence = "MEDIUM"]', style: { 'line-color': '#3f4a63', 'target-arrow-color': '#fbbf24', 'opacity': 0.55 } },
+      { selector: 'edge[confidence = "LOW"]', style: { 'opacity': 0.35, 'line-style': 'dashed' } },
+      { selector: 'edge[visual_verified = "YES"]', style: { 'line-color': '#4ade80', 'target-arrow-color': '#4ade80' } },
+      { selector: 'edge[visual_verified = "NO"]', style: { 'line-style': 'dashed', 'line-color': '#f87171', 'target-arrow-color': '#f87171', 'opacity': 0.4 } },
+      { selector: 'node:selected', style: { 'border-width': 4, 'border-color': '#fbbf24' } },
+      { selector: '.highlighted', style: { 'border-width': 3, 'border-color': '#fbbf24' } },
+      { selector: '.faded', style: { 'opacity': 0.12 } },
     ],
     layout: { name: 'cose', animate: false, fit: true, idealEdgeLength: 140, nodeRepulsion: 14000, gravity: 0.4, padding: 30 },
     wheelSensitivity: 0.2,
@@ -254,9 +329,13 @@ async function init() {
   });
 
   const cy = window.cy;
-  cy.on('tap', 'node', evt => {
-    const n = evt.target;
-    showDetails(n.data('id'), nodesById, data.edges);
+  const tooltip = document.getElementById('tooltip');
+
+  cy.on('tap', 'node', evt => showDetails(evt.target.data('id'), nodesById, data.edges));
+
+  cy.on('dbltap', 'node', evt => {
+    const url = evt.target.data('url');
+    if (url) window.open(url, '_blank');
   });
 
   cy.on('mouseover', 'node', evt => {
@@ -264,16 +343,22 @@ async function init() {
     const neighborhood = n.neighborhood().union(n);
     cy.elements().difference(neighborhood).addClass('faded');
     neighborhood.removeClass('faded');
-    // show label on hover even if small
     n.style({ 'text-opacity': 1 });
+
+    // Show tooltip
+    const renderedPos = n.renderedPosition();
+    tooltip.textContent = n.data('title');
+    tooltip.style.left = (renderedPos.x + 240) + 'px';
+    tooltip.style.top = (renderedPos.y + 80) + 'px';
+    tooltip.style.display = 'block';
   });
   cy.on('mouseout', 'node', evt => {
     cy.elements().removeClass('faded');
     const n = evt.target;
     if ((n.data('incomingCount')||0) < 5) n.style({ 'text-opacity': 0 });
+    tooltip.style.display = 'none';
   });
 
-  // Show labels at high zoom
   cy.on('zoom', () => {
     const z = cy.zoom();
     cy.nodes().forEach(n => {
@@ -287,9 +372,9 @@ async function init() {
   document.querySelectorAll('input[name=layout]').forEach(r => {
     r.addEventListener('change', e => {
       const v = e.target.value;
-      const opts = v === 'cose' ? { name: 'cose', animate: false, idealEdgeLength: 80, nodeRepulsion: 4500 } :
-                   v === 'grid' ? { name: 'grid', animate: false, sort: (a, b) => (a.data('courseId') || '').localeCompare(b.data('courseId') || '') } :
-                   { name: 'circle', animate: false };
+      const opts = v === 'cose' ? { name: 'cose', animate: true, idealEdgeLength: 140, nodeRepulsion: 14000, gravity: 0.4 } :
+                   v === 'grid' ? { name: 'grid', animate: true, sort: (a, b) => (a.data('courseId') || '').localeCompare(b.data('courseId') || '') } :
+                   { name: 'circle', animate: true };
       cy.layout(opts).run();
     });
   });
@@ -301,14 +386,20 @@ async function init() {
       cy.elements().removeClass('faded').removeClass('highlighted');
       return;
     }
+    let matched = 0;
     cy.nodes().forEach(n => {
       const t = (n.data('title') || '').toLowerCase();
       if (t.includes(q)) {
         n.removeClass('faded').addClass('highlighted');
+        n.style({ 'text-opacity': 1 });
+        matched++;
       } else {
         n.addClass('faded').removeClass('highlighted');
       }
     });
+    if (matched > 0 && matched < 10) {
+      cy.fit(cy.nodes('.highlighted'), 50);
+    }
   });
 
   // Course filter
@@ -317,23 +408,7 @@ async function init() {
     courseEl.querySelectorAll('input[type=checkbox]').forEach(cb => { if (cb.checked) checked.add(cb.dataset.pid); });
     cy.nodes().forEach(n => {
       const pid = n.data('courseId');
-      if (checked.has(pid)) { n.removeClass('faded'); } else { n.addClass('faded'); }
-    });
-  });
-
-  // Confidence filter
-  ['high', 'medium', 'low'].forEach(level => {
-    document.getElementById('filter-' + level).addEventListener('change', () => {
-      cy.edges().forEach(e => {
-        const c = (e.data('confidence') || '').toLowerCase();
-        if (!c) return;
-        const cb = document.getElementById('filter-' + c);
-        if (cb && !cb.checked) {
-          e.style({ 'display': 'none' });
-        } else {
-          e.style({ 'display': 'element' });
-        }
-      });
+      if (checked.has(pid)) n.removeClass('faded'); else n.addClass('faded');
     });
   });
 }
@@ -343,20 +418,19 @@ function showDetails(vid, nodesById, edges) {
   if (!n) return;
   document.getElementById('details').style.display = 'block';
   document.getElementById('d-title').textContent = n.title;
-  document.getElementById('d-link').textContent = n.url;
   document.getElementById('d-link').href = n.url;
-  document.getElementById('d-course').textContent = n.course + (n.course_position ? ` (#${n.course_position})` : '');
+  document.getElementById('d-course').textContent = n.course + (n.course_position ? ` · 第 ${n.course_position} 位` : '');
   const m = Math.floor((n.duration_s||0)/60), s = Math.round((n.duration_s||0)%60);
-  document.getElementById('d-duration').textContent = `${m}m ${s}s`;
+  document.getElementById('d-duration').textContent = `📍 ${m} 分 ${s} 秒`;
 
   const outgoing = edges.filter(e => e.source === vid);
   const incoming = edges.filter(e => e.target === vid);
 
   document.getElementById('d-outgoing').innerHTML =
-    outgoing.length === 0 ? '<div style="color:#8a93a8;font-size:11px;">無</div>' :
+    outgoing.length === 0 ? '<div style="color:#5a6987;font-size:12px;padding:4px;">（無）</div>' :
     outgoing.map(e => refCard(e, nodesById, true)).join('');
   document.getElementById('d-incoming').innerHTML =
-    incoming.length === 0 ? '<div style="color:#8a93a8;font-size:11px;">無</div>' :
+    incoming.length === 0 ? '<div style="color:#5a6987;font-size:12px;padding:4px;">（無）</div>' :
     incoming.map(e => refCard(e, nodesById, false)).join('');
 }
 
@@ -365,24 +439,28 @@ function refCard(e, nodesById, outgoing) {
   if (!other) return '';
   const arrow = outgoing ? '→' : '←';
   const ts = Math.floor(e.source_t);
-  const sourceNode = outgoing ? nodesById[e.source] : nodesById[e.source];
+  const sourceNode = nodesById[e.source];
   const ytUrl = `${sourceNode.url}&t=${ts}`;
+
   let visualBadge = '';
-  if (e.visual_verified === 'YES') {
-    visualBadge = '<span style="color:#4ade80;font-size:10px;">✓ 視覺驗證</span>';
-  } else if (e.visual_verified === 'NO') {
-    visualBadge = '<span style="color:#f87171;font-size:10px;">✗ 視覺打臉</span>';
-  } else if (e.visual_verified === 'PARTIAL') {
-    visualBadge = '<span style="color:#fbbf24;font-size:10px;">~ 部分</span>';
-  }
-  const visualEvLine = e.visual_evidence ? `<div style="color:#aab2c8;margin-top:3px;font-size:10px;border-left:2px solid #5a6987;padding-left:5px;">👁 ${e.visual_evidence.slice(0, 100)}</div>` : '';
+  if (e.visual_verified === 'YES') visualBadge = '<span class="vbadge-YES">✓ 視覺確認</span>';
+  else if (e.visual_verified === 'NO') visualBadge = '<span class="vbadge-NO">✗ 視覺打臉</span>';
+  else if (e.visual_verified === 'PARTIAL') visualBadge = '<span class="vbadge-PARTIAL">~ 部分</span>';
+
+  const visualEvLine = e.visual_evidence ? `<div class="visual-ev">👁 ${escapeHtml(e.visual_evidence.slice(0, 140))}${e.visual_evidence.length > 140 ? '…' : ''}</div>` : '';
+  const confidence = e.confidence ? `<span class="conf-${e.confidence}">[${e.confidence}]</span>` : '';
+
   return `<div class="ref-card">
-    <div class="arrow">${arrow} ${e.confidence ? `<span class="conf-${e.confidence}">[${e.confidence}]</span>` : ''} ${e.category||''} ${visualBadge}</div>
-    <div style="margin:3px 0;"><a href="${other.url}" target="_blank">${other.title.slice(0, 50)}</a></div>
-    <div style="color:#aab2c8;">@${ts}s · <a href="${ytUrl}" target="_blank" style="color:#8ab4f8;">跳到出處</a></div>
-    <div style="color:#c5cdd6;margin-top:3px;">「${e.evidence||''}」</div>
+    <div class="head">${arrow} ${confidence} ${e.category||''} ${visualBadge}</div>
+    <div class="title"><a href="${other.url}" target="_blank">${escapeHtml(other.title)}</a></div>
+    <div class="ts-link">@${ts}s · <a href="${ytUrl}" target="_blank">▶ 跳到出處</a></div>
+    <div class="quote">「${escapeHtml(e.evidence || '')}」</div>
     ${visualEvLine}
   </div>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
 init().catch(e => {

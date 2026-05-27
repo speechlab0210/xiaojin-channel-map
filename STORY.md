@@ -121,9 +121,47 @@
 4. [FN8jclCrqY0](https://youtube.com/watch?v=FN8jclCrqY0) Deep Learning Theory 1-2 — 12 outgoing
 5. [m3i2mk5hs8U](https://youtube.com/watch?v=m3i2mk5hs8U) AI 能自我修正嗎 — 11 outgoing
 
-## 階段 3.5（視覺驗證）
+## 階段 3.5（視覺驗證）— 完成
 
-156 cases 排隊跑視覺驗證（MEDIUM 72 + HIGH 有視覺暗示 73 + PREREQUISITE 11）。預期會抓到一些 resolver 錯誤的案例（像 Phase 1 pilot 那樣）。
+**156 cases verified（每個下載 25s 影片段 + 抽 3 frames + GPT-5 vision 分析）**：
+- **NO (resolver wrong, slide says different): 57 (36%)**
+- **YES (slide URL/縮圖 confirms resolver): 10 (6%)**
+- **PARTIAL (related but unclear): 43 (28%)**
+- **UNKNOWN (segment download fail / vision 看不清楚): 46 (30%)**
+
+**Key insight**：在 ambiguous 案例中，**有 36% 的 resolver 解錯**，視覺驗證抓到。
+e.g. 2rcJdFuNbZQ@90s「機器學習導論的上課錄影」→ resolver 猜 VuQUF1VVX40 第0講（錯）→ 投影片實際有 URL `https://youtu.be/TigfpYPJk1s` 第1講（正確）
+
+→ 這就是大金老師「不只聽語音、也要看畫面」的真正價值
+
+**現在每條邊都帶 visual_evidence**，網站上 ✗ 視覺打臉 / ✓ 視覺驗證 / ~ 部分 三種 badge 標示。
+
+## 部署
+
+- **GitHub Pages**：[speechlab0210.github.io/xiaojin-channel-map/site/](https://speechlab0210.github.io/xiaojin-channel-map/site/)
+- **Source repo**：[github.com/speechlab0210/xiaojin-channel-map](https://github.com/speechlab0210/xiaojin-channel-map)
+- 站內互動：搜尋、課程過濾、confidence 過濾、layout 切換、節點 hover、點擊看詳情 + 視覺證據
+
+## 最終數字（截至 2026-05-27 13:42）
+
+| | |
+|---|---|
+| 全頻道影片 | 482 |
+| 課程系列 | 24 |
+| 取得字幕 | 281 (58%) |
+| Regex candidates | 935 |
+| 真 cross-refs | 520 |
+| 解析到 target | 503 (96.7%) |
+| Graph edges | 441 |
+| 有引用的節點 | 161 |
+| 視覺驗證 | 156 cases |
+| 視覺打臉率 | 36% (57/156) |
+| API 花費 | ~$15-20 (OpenAI gpt-5-mini + gpt-5 vision) |
+| 總工程時間 | ~3 小時（含探索、debug、視覺等） |
+
+## 待辦：Phase 4 — YouTube 影片發布
+
+[yt_video_outline.md](yt_video_outline.md) 已備好 15 slides 結構。等大金老師授權上傳前先做 mp4 ready。
 
 ## 教訓
 

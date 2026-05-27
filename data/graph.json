@@ -8859,8 +8859,8 @@
       "keyword_match": "第一堂",
       "context": "他是一個 linear 的 function 這一個 network 他就跟 linear regression 是一模一樣的 如果我們今天考我們機器學習那門課 第一堂課就講 linear regression 他跟 linear regression 是一樣的 input 是 1，那希望他的 output 跟 1 愈接近愈好 這一個 network 如果我們橫軸是 w 縱軸是他的 loss 他是 convex 的 如果今天 w = 1",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片僅顯示一個兩層線性網路示意（x=1、w1、w2、ŷ=1）與右下角 arXiv 連結（https://arxiv.org/abs/1412.6544），未出現「解剖小龍蝦」、「OpenClaw」或 AI Agent 相關字樣、標題或連結。內容主題明顯是線性模型/線性回歸與 loss convex 性質，與該 AI Agent 影片主題不符。"
     },
     {
       "source": "0O6nYRC7GeY",
@@ -8957,8 +8957,8 @@
       "keyword_match": "之前課",
       "context": "計算的式子在之前的課程裡面已經講過了， 計算的式子在之前的課程裡面已經講過了， 那你就把之前課程裡面導過的式子，把它寫出來就可以了 那你就把之前課程裡面導過的式子，把它寫出來就可以了 那你就把之前課程裡面導過的式子，把它寫出來就可以了 算出這個b和w對loss的偏微分以後， 算出這個b和w對loss的偏微分以後， 你就把b的偏微分乘上learning rate去update b 你就把b的偏微分乘上learning rate去update b 把w的偏微分乘上learning rate去update w 把w的偏微分乘上learning rate去update w 反覆iteration多次，",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "畫面是 Jupyter Notebook 標題「Gradient Descent Demo」，內有程式碼：b_grad、w_grad 的計算與 for 迴圈更新參數（b = b - lr * b_grad、w = w - lr * w_grad），與 caption 內容『算偏微分後乘上 learning rate 反覆 iteration』相符。但投影片/畫面未出現『ML Lecture 0-1: Introduction of Machine Learning』字樣、連結或截圖，因此無法確定就是該支影片。"
     },
     {
       "source": "2-JNBzCq77c",
@@ -9002,8 +9002,8 @@
       "keyword_match": "上課",
       "context": "如果你之前了解語言模型的基本原理的話 那你可能會看起來更加順暢 那本學期的課程是假設你已經看過機器學習導論過去的錄影 再來開始講的 你可以先預習機器學習導論這門課的上課錄影 你來聽這門課可能會有更多的收穫 那如果還沒有預習的話也沒有關係 你可能還是可以聽懂大部分的內容 那你可以之後再去看機器學習導論這門課的錄影 好那我們就從 OpenClaw 開始講起 那怎麼安裝 OpenClaw 那我就不說了 這個已經有太多太多太多的教學",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右側明確顯示影片縮圖與文字「一堂課搞懂生成式人工智慧的原理」，下方註明「【生成式人工智慧與機器學習導論2025】第1講」並附 YouTube 連結（https://youtu.be/TigfpYPJk1s）。這與你猜測的「第0講：開場與課程簡介」不符。"
     },
     {
       "source": "3JP-xuBJsyc",
@@ -9044,8 +9044,8 @@
       "keyword_match": "上課",
       "context": "我們的 gradient 往這邊所以往反方向走 接著在下一個 time step 我們再算 θ1 這一點的 gradient 接著再往反方向走 每一個 time step 都是往反方向走一步，就是這樣子 這張是李宏毅老師上課的投影片 借用一下 第二個方法是 SGD with Momentum 這個東西會用到剛剛說的 momentum 一開始一樣先從 θ0 開始 這個時候我們 定義一個參數叫做 momentum 應該不要說參數，定義一個向量叫 momentum 一開始 initialize 的值也是被設成 0 接著在 θ0 這點算他的 gradient",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「SGD」與「SGD with Momentum(SGDM)」，右側有步驟式文字（Start at position θ0、Compute gradient、Move to θ1=θ0−η∇L(θ0) 等），並用紅色箭頭標示 Gradient、藍色箭頭標示 Movement、綠色虛線標示上一個 step 的 movement；頁角寫有「Credit to 李宏毅老師上課投影片」。內容與描述的梯度方向與動量初始化為 0 等講解一致，但畫面未出現該 TA 補充課影片的標題或連結，無法確定就是那支影片。"
     },
     {
       "source": "4pUmZ8hXlHM",
@@ -9114,8 +9114,8 @@
       "keyword_match": "第一堂",
       "context": "<b>看看說這些參數跟輸入的句子</b> <b>是進行什麼樣的互動，</b> <b>最後產生出了下一個 Token 的機率。</b> <b>那這是今天課程的規劃。</b> <b>那跟第一堂課的架構比較像，</b> <b>我們會先花一些時間用投影片跟你講一下，</b> <b>這一些語言模型背後</b> <b>是怎麼被運作的。</b> <b>那為了要讓你更相信說，</b> <b>這個語言模型背後運作的原理，</b> <b>就跟投影片裡面講的差不多，</b> <b>所以呢，</b> <b>這課程的後半段，</b>",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片顯示「課程規劃」與兩塊「原理／實作」，以及「請注意在這堂課中沒有任何模型被訓練／我們解剖已經訓練好的模型」。這與引用的描述（先講原理、後半段實作驗證）主題相符，但畫面沒有出現影片標題、連結或專屬標記，無法確定就是那支影片。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9142,8 +9142,8 @@
       "keyword_match": "第一講",
       "context": "<b>我們假設每一個中文的字，</b> <b>每一個方塊字，</b> <b>都是一個 Token。</b> <b>雖然實際上並不是這樣子。</b> <b>如果你有仔細聽第一講的話，</b> <b>第一講我帶大家看過，</b> <b>Llama 裡面的 Token 長什麼樣子。</b> <b>很多時候好幾個中文字合起來</b> <b>才是一個 Token，</b> <b>或甚至有時候一個中文的字，</b> <b>反而是好幾個 Token。</b> <b>但在這堂課為了要做投影片比較簡潔，</b> <b>所以我們假設一個中文的方塊字</b>",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「Tokenization」，下方以「今天天氣真好！」示例，並在右下角小字寫著「假設每一個中文字都是一個 token，雖然實際上並非如此」；與老師口述內容主題相符，但投影片上未標註「生成式人工智慧與機器學習導論2025 第1講」或連結。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9156,8 +9156,8 @@
       "keyword_match": "第一講",
       "context": "<b>每一個方塊字，</b> <b>都是一個 Token。</b> <b>雖然實際上並不是這樣子。</b> <b>如果你有仔細聽第一講的話，</b> <b>第一講我帶大家看過，</b> <b>Llama 裡面的 Token 長什麼樣子。</b> <b>很多時候好幾個中文字合起來</b> <b>才是一個 Token，</b> <b>或甚至有時候一個中文的字，</b> <b>反而是好幾個 Token。</b> <b>但在這堂課為了要做投影片比較簡潔，</b> <b>所以我們假設一個中文的方塊字</b> <b>就是一個 Token。</b>",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題是「Tokenization」，下方把「今天天氣真好！」逐字對應編號，並在右下角標註「假設每一個中文字都是一個 token，雖然實際上並非如此」，與描述內容相符；但畫面未出現課程名稱、連結或「第1講」等標示，無法確定就是該支影片。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9215,8 +9215,8 @@
       "keyword_match": "第三講",
       "context": "可以看一下上學期機器學習的第三講 講了 AI 的腦科學 那今天講的內容有一部分 Large Lens 跟 PathScope 是有出現在第三講裡面的 但第三講還有更多的內容 值得你再去深挖 好，接下來我們就進入實作的環節 來實際解剖一個大型語言模型 看看它裡面有什麼東西 這個是 Colab 的連結 好，如果大家找不到 Colab 連結的話 反正投影片都是公開的",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "YES",
+      "visual_evidence": "投影片頁面標題為「延伸閱讀」，右側嵌入影片縮圖寫著「大型語言模型 內部運作機制」，下方清楚列出完整標題「【生成式AI時代下的機器學習(2025)】第三講：AI 的腦科學 —— 語言模型內部運作機制剖析…」並附上 YouTube 連結：https://www.youtube.com/watch?v=XnIi63UDW2o&t=2s；左側還有可掃描的 QR Code。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9229,8 +9229,8 @@
       "keyword_match": "第三講",
       "context": "講了 AI 的腦科學 那今天講的內容有一部分 Large Lens 跟 PathScope 是有出現在第三講裡面的 但第三講還有更多的內容 值得你再去深挖 好，接下來我們就進入實作的環節 來實際解剖一個大型語言模型 看看它裡面有什麼東西 這個是 Colab 的連結 好，如果大家找不到 Colab 連結的話 反正投影片都是公開的 你可以在投影片上找到",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左上寫「延伸閱讀」，右側嵌入 YouTube 畫面，底下明確標示「[生成式AI時代下的機器學習(2025)] 第三講：AI 的腦科學—語言模型內部運作機制解析…」並附上連結 https://www.youtube.com/watch?v=XnIi63UDW2o（可見『第三講』字樣），主題為「大型語言模型 內部運作機制」，指向第三講而非第二講。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9245,8 +9245,8 @@
       "alt_candidates": [
         "lVdajtNpaGI"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片連到的 Colab 頁籤標題顯示「第三講：了解語言模型內部是怎麼工作的」，而 Colab 內文也寫明「（生成式人工智慧與機器學習導論）第二講」的課後實作，均非第１講。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9262,8 +9262,8 @@
         "lVdajtNpaGI",
         "dWQVY_h0YXU"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "第三張圖的 Colab 頁面標題與內文明確寫著「第二講」，並說明是為第二講所用的程式；投影片上的 QR code/連結即導向該 Colab，指向第2講而非第1講。"
     },
     {
       "source": "8iFvM7WUUs8",
@@ -9531,8 +9531,8 @@
       "keyword_match": "第一堂",
       "context": "也就是如果你想要修這一門課的話 你不需要修過任何人工智慧相關的課程 不需要有任何數學跟程式的背景 也不需要修過任何機器學習相關的課程 這門課可以是你人生的第一堂人工智慧相關課程 那有人可能會問說我已經會用ChatGPT了 用ChatGPT就是如此的簡單 只要你會說話 只要你會打字 你知道怎麼跟另外一個人溝通 你就可以用ChatGPT 我已經會用啦 那會用就好啦",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「課程定位」，子彈列寫到「目標受眾：已經接觸過 ChatGPT…」「預修課程：無（不預設修過任何人工智慧相關課目、不預設修過任何數學專業科目、不預設會寫程式）」「這可以是你人生的第一堂人工智慧相關課程」以及頁尾問句「為什麼知道原理是一件重要的事情？」。內容與 caption 描述及導論第一講主題相符，但投影片未顯示「【生成式AI導論 2024】第1講」標題或連結，無法確定是該支影片。"
     },
     {
       "source": "AVIKFXLCPY8",
@@ -9545,8 +9545,8 @@
       "keyword_match": "第一堂",
       "context": "基本上就是沒有什麼一樣的地方 所以就算是你修過我的機器學習 或者是修過其他老師開的機器學習 我相信這一門課也可以帶給你很大的幫助 那我剛才有說這一門課可以作為你的人工智慧的第一堂課 你可以把這一門課作為你學人工智慧的基礎 未來再去學其他機器學習相關的課程 那要再聲明一下在這一門課你不會學到什麼 因為這是一門入門的課 所以如果我們繼續用魔術這個比喻的話 這一門課會手把手帶你變幾個魔術 但是可能不足以訓練你成為魔術師 也沒有辦法帶你創造新的魔術",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫「課程定位」，子彈點包含「跟其他機器學習相關課程的關係」與「在這門課你不會學到什麼？」並出現『這門課會手把手帶你變幾個魔術…不足以訓練你成為魔術師』等字句，與引用的口白高度一致，但畫面未出現影片標題或連結，無法確定就是該支影片。"
     },
     {
       "source": "AVIKFXLCPY8",
@@ -9559,8 +9559,8 @@
       "keyword_match": "上課",
       "context": "要做些大變活人之類的 那這一門課可以作為你成為魔術師的開始 那上課因為時間有限 然後把這門課設定為是兩學分的課 所以我們上課時間只有兩個小時而已 因為上課時間有限 所以我們無法深入提到所有的技術 所以很多地方可能會讓你覺得 我什麼都脫了 就只給我看這個 所以很多地方可能沒有辦法講得非常的深入 但是這是你的第一門人工智慧的課 他不會是你最後一門人工智慧的課",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「課程定位」，重點列出：會『手把手帶你變幾個魔術…作為你成為魔術師的開始』、『上課時間有限無法深入…但這是你的第一門課，不會是最後一門課』，與題述的講者用『魔術師』比喻與課程為入門的描述高度吻合，但未見影片標題或連結等直接標註。"
     },
     {
       "source": "AVIKFXLCPY8",
@@ -9573,8 +9573,8 @@
       "keyword_match": "上課",
       "context": "那這一門課可以作為你成為魔術師的開始 那上課因為時間有限 然後把這門課設定為是兩學分的課 所以我們上課時間只有兩個小時而已 因為上課時間有限 所以我們無法深入提到所有的技術 所以很多地方可能會讓你覺得 我什麼都脫了 就只給我看這個 所以很多地方可能沒有辦法講得非常的深入 但是這是你的第一門人工智慧的課 他不會是你最後一門人工智慧的課 未來你可以修其他相關的課程",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「課程定位」，子彈點寫到「這門課會手把手帶你變幾個魔術…作為你成為魔術師的開始」、「上課時間有限無法深入…但這是你的第一門課」、「如果想要更深入研究…可以看投影片上引用的論文」；內容與引用的口白高度一致，但畫面未出現影片標題或連結，無法確定就是該支影片。"
     },
     {
       "source": "aZ_jXZvxyVg",
@@ -9587,8 +9587,8 @@
       "keyword_match": "上課",
       "context": "那給範例就要能夠回答叫做 In-context learning 那這個就是ChatGPT系列想要達成的目標 那其實OpenAI並不是這幾年才突然想做這件事 他們一直都想做這件事 比如說2021年的機器學習上課錄影就已經有一個很像的投影片 告訴你說GPT它想要做的事情就是讓機器讀題目的敘述 然後再看範例，就能夠回答問題 不過在2021年那個時候會覺得這個想法太狂了 大概二三十年後才會看到結果吧沒有想到這麼快就可以看到結果了 當初在這個影片的標題上還取說這叫GPT的野望 代表說這個應該是很難達成的事情 有人常常問一個問題 GPT系列能不能夠成為一個專才跟BERT一樣",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片底部清楚標示「【機器學習2021】自督導式學習 (Self-supervised Learning) (四) - GPT的野望」並附上 YouTube 連結 https://youtu.be/WY_E0Sd4K80，畫面也嵌了該影片的播放器截圖，與使用者猜測的「解剖小龍蝦 — OpenClaw」主題不符。"
     },
     {
       "source": "BABPWOkSbLE",
@@ -9615,8 +9615,8 @@
       "keyword_match": "過去的課",
       "context": "其實就是騙大家去點影片而已啦 好 那今天其實就講了深度學習 那今天講的不是一般的介紹方式 如果你想要聽一般的介紹方式 過去的課程影片也是有的 我就把連結附在這邊 然後深度學習的訓練 會用到一個東西叫 Backpropagation 其實它就是比較有效率 算 Gradients 的方法 跟我們今天講的東西沒有什麼不同 但如果你真的很想知道 Backpropagation 是什麼的話",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "YES",
+      "visual_evidence": "投影片標題寫“To learn more ……”，左側寫“Basic Introduction”並附上連結 https://youtu.be/Dr-WRIEfefw；右側寫“Backpropagation – Computing gradients in an efficient way”並附上連結 https://youtu.be/ibJpTrp5mcE。這與老師口述的『一般介紹的影片連結』與『Backpropagation 影片』相符。"
     },
     {
       "source": "bJFtcwLSNxI",
@@ -9657,8 +9657,8 @@
       "keyword_match": "過去影片",
       "context": "如果你瞭解RL的原理的話 你就不會太驚嘆 RL做的事情是什麼 是強化模型原有的能力 那在我們過去影片裡面 都有跟大家講過 RL實際上是怎麼運作的 RL實際上運作的過程是 模型產生出正確答案的時候 你告訴他這是好的 他應該增加正確答案的機率 如果產生錯誤答案 你告訴他不好",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「Foundation Model 很重要」，內容討論 Qwen-32B-Base、DeepSeek-R1、Imitation Learning 與『RL 是強化模型原有的能力』；畫面沒有出現「利用多張GPU訓練大型語言模型」「DeepSpeed」「Liger Kernel」「Flash Attention」等多卡訓練主題或該影片標題/連結。"
     },
     {
       "source": "bJZTJ7MjYqg",
@@ -9671,8 +9671,8 @@
       "keyword_match": "之前有提",
       "context": "也許未來你不會再期待語言模型馬上給你一個答案 而是語言模型有能力自己跟環境互動 最終想辦法解決問題 那要講到這個AI可以自主運作的這件事情 也許最知名的例子就是我們之前有提過的 由AI村民所構成的Stanford小鎮 那我之前的上課錄影也已經講過這一段 希望大家都有看那一段錄影 那除了讓這個AI活在這個小鎮裡面以外 還有人讓AI玩Minecraft 讓AI還活在我的世界 活在Minecraft裡面 AI就會自己想辦法做各式各樣的探索",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫「由 AI 村民組成的虛擬村莊」，右上角直接列出連結 youtu.be/G44Lkj7XDAs 與 arxiv.org/abs/2304.03442（Stanford Generative Agents 論文），與 OpenClaw 無關。"
     },
     {
       "source": "bJZTJ7MjYqg",
@@ -9685,8 +9685,8 @@
       "keyword_match": "上課",
       "context": "最終想辦法解決問題 那要講到這個AI可以自主運作的這件事情 也許最知名的例子就是我們之前有提過的 由AI村民所構成的Stanford小鎮 那我之前的上課錄影也已經講過這一段 希望大家都有看那一段錄影 那除了讓這個AI活在這個小鎮裡面以外 還有人讓AI玩Minecraft 讓AI還活在我的世界 活在Minecraft裡面 AI就會自己想辦法做各式各樣的探索 打造各式各樣的工具 你可以看一篇叫做Voyager的論文,這個是去年五月的論文",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右上角清楚標示 youtu.be/G44Lkj7XDAs 與 arxiv.org/abs/2304.03442，標題為「由 AI 村民組成的虛擬村莊」，畫面是 Stanford Generative Agents 小鎮的示意圖；未出現「第10講」或 Transformer 字樣，連結也不是你猜的那支影片。"
     },
     {
       "source": "CbIPjrOj2Tc",
@@ -9703,8 +9703,8 @@
         "YJoegm7kiUM",
         "EnWz5XuOnIQ"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「語音語言模型的發展史」，下方有「Speaker: Hung-yi Lee 李宏毅」。畫面未出現「第 9 講：影像和聲音上的生成策略 — Diffusion/Flow-matching 系列和接龍」或任何對應連結，主題名稱亦不相符。"
     },
     {
       "source": "CbIPjrOj2Tc",
@@ -9731,8 +9731,8 @@
       "keyword_match": "我們上週跟大家介紹過",
       "context": "那其實這個想法呢 跟文字的 BERT 可以說幾乎是一模一樣的 那可能也非常像是 我們上週跟大家介紹過的 MaskGIT 它是用在影像上的 但 MaskGIT 其實是再更晚的文章 MaskGIT 其實就是仿造 BERT 的想法 那當時我們其實曾經真的嘗試過 那用用 Mockingjay 看能不能夠讓它合成聲音",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片左上寫有『Speech BERT』與 arXiv 連結（https://arxiv.org/abs/1910.12638），左下文字『Like BERT (also, like MaskGIT)』；中央框標示『Mockingjay mimic sound it hears』並標註『masked』『Learn to reconstruct』的重建流程圖，內容與老師口白（BERT、MaskGIT、Mockingjay、嘗試合成聲音）主題相符，但未見該特定講次或影片標題/連結。"
     },
     {
       "source": "CbIPjrOj2Tc",
@@ -9759,8 +9759,8 @@
       "keyword_match": "曾經給過一個演講",
       "context": "我在 2022 年 就還沒有 ChatGPT 的時候 所以是史前時代 在史前時代 曾經給過一個演講 講這樣子的模型 是怎麼被訓練出來的 大家有興趣 再去找這個史前時代的演講來看 好那它的結果做出來怎麼樣呢 橫軸啊 是語音辨識系統的錯誤率 縱軸呢",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左下清楚標示「ICASSP2022 Expert Session: EXP-6: How versatile are self-supervised models?」並附上 IEEE/ICASSP 網站連結；右上也標註論文連結 arXiv:2203.04911，主題為 End-to-End Speech QA。這些強烈指向 2022 年的 ICASSP 專題演講與相關研究，而非 2025 課程第 2 講。"
     },
     {
       "source": "CbIPjrOj2Tc",
@@ -9815,8 +9815,8 @@
       "keyword_match": "上課",
       "context": "順便撿到一地黃金 完美 阿這睜眼說瞎話 然後我就想說 那 Sora 能不能夠自動來上課呢 所以我就給它 我們上一次上課的投影片封面 然後告訴它 這是課程的投影片封面 請產生課程 然後告訴它 它知道標題是 通用模型的終身學習",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "YES",
+      "visual_evidence": "投影片明確顯示標題「通用模型的終身學習」與講者姓名，頁面文字寫「輸入文字(+圖片)、輸出影片」，並在下方標註「這是課程的封面投影片，生成課程」，旁邊方塊標示「Sora」。這與所稱影片題名與情境（用封面投影片讓 Sora 生成課程）一致。"
     },
     {
       "source": "ccqCDD9LqCA",
@@ -9829,8 +9829,8 @@
       "keyword_match": "上課",
       "context": "阿這睜眼說瞎話 然後我就想說 那 Sora 能不能夠自動來上課呢 所以我就給它 我們上一次上課的投影片封面 然後告訴它 這是課程的投影片封面 請產生課程 然後告訴它 它知道標題是 通用模型的終身學習 講者是李宏毅 那我們來看看 Sora 產生什麼樣的結果",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片左側清楚顯示『通用模型的終身學習』與講者名『李宏毅』，下方還寫『這是課程的封面投影片，生成課程』，但未出現年份、講次（如第8講）或影片連結，無法確認就是該特定影片。"
     },
     {
       "source": "ccqCDD9LqCA",
@@ -9843,8 +9843,8 @@
       "keyword_match": "第一堂",
       "context": "所以今天只會側重在 Auto Regressive 這條研究路線上面 那如果你想多知道一些另外一條路線發生的事情的話 你可以看一下去年生成式 AI 導論課程裡面講的一些內容 好 那我們就開始今天有關技術的部分 那我們從開學的第一堂課就跟大家講說 所謂的生成啊 就是你先知道你要生成的東西的基本單位是什麼 接下來做接龍把這些單位一個一個生成出來就結束了 所以我們要問的是如果我們今天要產生的是聲音 那聲音它可能是音樂 它可能是人說話的聲音 那還有或者是影像 那它們的基本單位到底是什麼",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫「Diffusion Model 的世界線」，並直接列出兩支連結與標題：「[生成式AI導論 2024] 第17講…」與「[生成式AI導論 2024] 第18講…」的 YouTube 連結（youtu.be/5H2bVEmYDNg、youtu.be/OYN_GvAqv-A），明確指向去年的生成式AI導論課而非你猜的那支 2025 第一講。"
     },
     {
       "source": "ccqCDD9LqCA",
@@ -9927,8 +9927,8 @@
       "keyword_match": "上課",
       "context": "然後做RLHF 用使用者回饋的資料進行微調 那Finetune跟RLHF合起來又叫做Alignment 那如果你對於這三個步驟還不熟悉的話 你可以看一下過去我上課的錄影 你也可以看一下我最近釋出的影片 講這個生成式人工智慧的生成策略 瞭解生成式人工智慧的基本原理 再進行以下的課程 好那語音版的語言模型 它可能的運作原理是什麼樣子的呢 我們知道語言模型就是做文字接龍 給他一個未完成的句子",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題『先複習一下語言模型是怎麼被訓練出來的』，下方左側清楚寫『大型語言模型修煉史』並附上 YouTube 連結（https://youtu.be/cPcErV7tO2o...）；這與使用者猜測的主題相符，但投影片未標示『第7講／第二階段』等細節，無法確認就是該特定一集。此外，投影片也同時推薦 Fine-tune 與 RLHF 的影片連結，以及另一頁顯示『生成的策略』影片連結，符合老師口述的提醒。"
     },
     {
       "source": "cYrNjLxkoXs",
@@ -9941,8 +9941,8 @@
       "keyword_match": "上課",
       "context": "那顯然機器人信心分數就非常地高 我們知道說 當我們把一個圖片 丟進一個classifier的時候 其實classifier的output是一個distribution 我們都已經講過deep learning 我們在今天上課前 你應該要看的錄影裡面 已經講過deep learning了 所以知道說 今天 而且你這個output的地方 你還會用一個這個softmax的layer 這支影片裏面有的東西 我們的softmax layer是你output 是一個機率分佈 你可以把output看做是一個機率分佈 這裡把一張圖片丟到你的classifier裡面",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「How to estimate Confidence」，畫面示範把圖片丟進『Simpsons Character Classifier』並輸出一組機率分佈（四個角色各自的數值，頂端例子為0.97/0.01…且標註Very Confident），下方用非辛普森角色造成均分機率，與老師口述『classifier 的 output 是一個 distribution、softmax、信心分數』主題相符，但畫面上沒有出現「Anomaly Detection (1/7)」的標題或連結等明確引用。"
     },
     {
       "source": "D_S6y0Jm6dQ",
@@ -10015,8 +10015,8 @@
       "keyword_match": "之前第一次開 MLDS 的時候其實就會花兩周講",
       "context": "我又會有完全不一樣的講法也說不定 以前在 train Deep Learning 的時候 我們都要用 Restricted Boltzmann Machine 過去我們都相信沒有 Restricted Boltzmann Machine 是 train 不起來的 像我們之前第一次開 MLDS 的時候其實就會花兩周講 Restricted Boltzmann Machine 但今天如果再講 Restricted Boltzmann Machine 我相信你就生氣了覺得是在拖台錢 因為根本就用不上這個技術 所以這個變化是非常快的也許明年再來講同樣東西的時候 就會有截然不同的講法也說不定 你如果問我",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片上標有「Question? Can we consider discriminator as evaluation function?」「Yann Lecun's talk」並引用 GAN 論文連結 https://arxiv.org/pdf/1406.2661.pdf，畫面是 GAN/判別器相關示意圖，主題明顯是生成對抗網路與判別器，與 OpenClaw/AI Agent 不相干。"
     },
     {
       "source": "DQNNMiAP5lw",
@@ -10061,8 +10061,8 @@
       "keyword_match": "曾經講",
       "context": "所以有了 Variational Auto-encoder，可以把你的 decoder train 的更加穩定 可以讓你的 decoder 就算 input 這個 vector 是在 training 的時候從來沒有看過的 vector 他 output 的東西仍然可能是合理的 object 這個都是複習在 Machine Learning 那門課曾經講過的東西 接下來要講的是這整套技術他少了甚麼樣的東西 講到這邊不知道大家有沒有問題想要問的呢 那個是你自己決定的他就跟 network 的參數一樣是你要調的 但是通常 code 他會是一個 low dimension 的東西 因為我們的假設通常",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片清楚寫有『Auto-encoder』與『Variational Auto-encoder (VAE)』、含 m_i、σ_i、e_i 與 c_i = exp(σ_i) × e_i + m_i 的公式、以及『Minimize reconstruction error』，下一張頁面有『What do we miss?』與 Generated Image/Target 圖示，主題與字幕描述的 VAE 與其缺少之處相符；但畫面未出現課程標題、年份或連結，無法確定就是該支 2025 第1講。"
     },
     {
       "source": "DQNNMiAP5lw",
@@ -10103,8 +10103,8 @@
       "keyword_match": "上課",
       "context": "所以比較每一個 model 可以產生的最好的結果的話 會發現 VAE 相較於 GAN 還是輸了一截的 剩下還有一些投影片但我覺得下次再講好了今天講的是一些直觀的東西 下一堂課開始就是要講一些有數學的、比較理論的東西 如果可以的話你先去預習一下我把之前上課了錄影放在這邊 因為是比較困難的問題所以建議你先預習一下 等一下助教也會提到一些新的技術今天這個課沒有 cover 的技術但都是未來會講到的 你聽到這些新的技術的話也不用太驚慌 作業 3-1 不用到那些新的技術應該也是可以過得了 baseline 臺灣大學人工智慧中心科技部人工智慧技術暨全幅健康照護聯合研究中心http://aintu.tw",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "投影片只有寫『Next Time • Preview』並列出兩個 YouTube 短連結：https://youtu.be/0CKeqXI5IY0 與 https://youtu.be/KSN4QYgAtao，沒有顯示影片標題或與『GAN Lecture 2 (2018): Conditional Generation』相符的文字"
     },
     {
       "source": "Dr-WRlEFefw",
@@ -10159,8 +10159,8 @@
       "keyword_match": "前一堂",
       "context": "居然也可以跟人類得到一定程度的相似程度 那如果你有興趣的話 可以看一下他發表的論文 我把連結放在左下角 好那在前一堂課呢 我們講到可以自動用語言模型 來取代人類的評分 那在語言模型的評分上 還是有一些可以再進一步思考的問題 我們當然可以說 把語言模型 它就是做 Next Token Prediction 它每次 Sample 出來多少分數",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片顯示主題為「用語言模型來評分」與「Speech LLM as a Judge」，左下角放有論文連結（如 arXiv: 2506.05984），並標註 RAFT 與 TRACT 相關連結，與老師口述『把連結放在左下角』『用語言模型來取代人類的評分』相符，但畫面未出現課程標題或「第3講」等直接標記。"
     },
     {
       "source": "dWQVY_h0YXU",
@@ -10173,8 +10173,8 @@
       "keyword_match": "我們還沒有正式講過",
       "context": "都是跟評分有關的資料 但是其實呢 你也可以在訓練的時候 多加一些額外的考量 但是因為我們還沒有正式講過 怎麼訓練模型 下週才會講到 所以這頁投影片 如果你看得不是很懂的話 也沒有關係 聽完下週的課程以後 再回頭來看這頁投影片 也許你會更清楚",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左上角直接列出 RAFT: https://iclr.cc/virtual/2025/poster/27796 與 TRACT: https://arxiv.org/abs/2503.04381，並畫出語言模型、標準答案、評分標準與1~5分分佈的示意圖（含評分者頭像與分數）。主題明顯是以評分資料訓練/評估語言模型，並未出現「一堂課搞懂機器學習與深度學習的基本原理」或「老師什麼時候要下課」等第5講標題或內容。"
     },
     {
       "source": "dWQVY_h0YXU",
@@ -10243,8 +10243,8 @@
       "keyword_match": "以前被提",
       "context": "他要先預測到未來 然後知道這邊很慘 所以他就不能過去那邊這樣 好 那這個東西其實是很久以前被提出來的 是 1983 年被提出來的 然後提出了這個 Nesterov 他其實是專門做數學 optimization 的一個大師 算近代做 optimization 最有名的一個數學大師之一 那這個 1983 年被提出來，那個時候其實 深度學習根本就還沒紅起來 所以這個東西其實不是提出來要做 deep learning 用的 他是做一個 generalized 的 optimization",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片上明確寫了「Can we look into the future? • Nesterov accelerated gradient (NAG)」並標註引用「[Nesterov, jour Dokl. Akad. Nauk SSSR'83]」，且前一頁為「More than momentum... • Momentum recap」；內容與描述的『先預測到未來』『1983 年 Nesterov 提出』相符，但畫面未出現該 TA 補充課影片的標題或連結，無法強證是那支影片。"
     },
     {
       "source": "e03YKGHXnL8",
@@ -10386,8 +10386,8 @@
       "keyword_match": "上課",
       "context": "代表這個參數的重要性 代表它在微調的時候 應不應該被調到 如果你想知道更多有關這方面的討論的話 我在這邊留了兩個過去上課的連結 你可以看看過去是怎麼定出一個參數 我們其實也可以修改我們的 Loss Function 剛才我們說我們現在之所以沒辦法做過 Locality 就是因為我們 Loss 裡面根本沒有考慮 Locality 那我們能不能修改 Loss 就把我們的 Locality 直接考慮進去呢 比如說我們現在能不能夠在訓練的時候 除了告訴模型輸入誰是全世界最帥的人輸出要是李宏毅之外",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右上角標示「Reference:」並列出兩個 YouTube 連結（https://youtu.be/X7aWP6LngEs?... 與 https://youtu.be/8uo3kJ5O9hA?...），而非「【生成式人工智慧與機器學習導論2025】第7講」的標題或連結。畫面內容包含「如何決定一個參數的重要性？」與「Loss 中考慮 Locality」及『誰是全世界最帥的人→李宏毅』的例子，對應老師口述，但引用的是兩個過去上課的連結。"
     },
     {
       "source": "EnWz5XuOnIQ",
@@ -10428,8 +10428,8 @@
       "keyword_match": "之前的課",
       "context": "那後來有很多各式各樣的 Network Editing 的變形 那因為時間有限的關係 我們就不再深入細講 那你可以看之前的課程 會講更多的內容 或者是你可以看一下 我放在這邊的連結 裡面對於 Network 的 Editing 有更完整的介紹 好那第三個要跟大家分享的技術 叫做 Model Merging 這個相較於前面兩個技術",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片寫著『To Learn More ... KnowEdit: A Comprehensive Study of Knowledge Editing for Large Language Models』並附上連結 https://zjunlp.github.io/project/KnowEdit/，是指向 KnowEdit 論文/專案頁，沒有出現『【生成式人工智慧與機器學習導論2025】第 7 講』或任何影片標題/連結。"
     },
     {
       "source": "EnWz5XuOnIQ",
@@ -10470,8 +10470,8 @@
       "keyword_match": "過去的課",
       "context": "Test-Time Computing 或 Test-Time Scaling 的一種 那如果你想要對 Reasoning 有更進一步了解的話 那過去的課程其實講過 我把錄影的連結放在這邊 給大家參考 不過 Reasoning 跟 Test Time Training 還是非常不一樣的 在 Reasoning 的過程中 模型是同個 模型參數是沒有變的 而 Test Time Training",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片底部明確標註 Ref: https://youtu.be/bJFtcwLSNxI（未出現「【生成式人工智慧與機器學習導論2025】第6講」等標題），顯示的是另一支特定 YouTube 連結。"
     },
     {
       "source": "EnWz5XuOnIQ",
@@ -10554,8 +10554,8 @@
       "keyword_match": "第三講",
       "context": "那至於為什麼會這樣呢 這一堂課的這個 預修的那個 knowledge 呢 是去年秋天的 機器學習導論的第三講 那其實在機器學習導論的 第三講的最後 也有提到相關的事情 在機器學習導論第三講的 最後三分鐘啊 我 visualize 了不同 query 不同 language model 的 attention 然後告訴你說",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "投影片只寫了「Streaming LLM」與 arXiv 連結（https://arxiv.org/abs/2309.17453），下方有 Llama‑2‑7B 與 Pythia‑12B 的困惑度曲線；沒有出現課程名稱、講次、或該影片標題/連結等資訊，因此無法從畫面判斷屬於哪支影片。"
     },
     {
       "source": "fDQaadKysSA",
@@ -10568,8 +10568,8 @@
       "keyword_match": "第三講",
       "context": "預修的那個 knowledge 呢 是去年秋天的 機器學習導論的第三講 那其實在機器學習導論的 第三講的最後 也有提到相關的事情 在機器學習導論第三講的 最後三分鐘啊 我 visualize 了不同 query 不同 language model 的 attention 然後告訴你說 這一些 language model 它非常喜歡 attend 在",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫『Streaming LLM』並附 arXiv 連結（2309.17453），下方有 Llama‑2‑7B、Pythia‑12B 的曲線圖與『Dense/Window/Streaming』attention 比較，主題與上下文工程與注意力機制相關；但畫面未出現課程或影片標題、章節標號或連結，無法確定就是該支影片。"
     },
     {
       "source": "fDQaadKysSA",
@@ -10610,8 +10610,8 @@
       "keyword_match": "第一堂",
       "context": "那什麼時候會前綴一樣呢 如果是 AI agent 的話 就非常有可能前綴一樣 你還記得這一頁投影片嗎 這個是第一堂課用的投影片 我們說當你對你的 AI agent 說你好的時候 它會在你的句子前面 加上非常長的 system prompt 再丟給語言模型 但這個 system prompt 雖然很長 但它的內容通常是不變的 因為它代表的可能就是",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「甚麼時候跨對話的 Cache 可以發揮作用」，畫面出現小龍蝦圖示與『使用 AI Agent 的時候！』文字，並標註『System prompt 每次呼叫語言模型的 prompt 都會附上』，搭配代表自我介紹/人生目標等固定前綴內容的方塊與語言模型互動流程，主題與 AI agent、固定 system prompt 前綴相符，但未出現該影片標題或連結等直接引用。"
     },
     {
       "source": "fegAeph9UaA",
@@ -10641,8 +10641,8 @@
         "zxFTrb_xGD0",
         "Zjpl84KCTvw"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「Neural Audio Codec」，子彈點列出 SoundStream、Encodec、Descript、HiFi-Codec、SpeechTokenizer，以及 Codec SUPERB 的 GitHub 連結，並附有『Residual Vector Quantization』的編碼器/解碼器示意圖。內容與神經音訊編解碼器主題高度相關，但畫面上沒有出現「Challenges in Developing Universal Audio Foundation Model - Dongchao Yang (CUHK)」的標題、講者名稱或連結。"
     },
     {
       "source": "fIoCxwVobEo",
@@ -10659,8 +10659,8 @@
         "JidtdZVtpkI",
         "zxFTrb_xGD0"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題是「Beyond Communication」，子彈點列出 AudioGen、AudioLM、MusicLM、MusicGen、VALL‑E、XTTS、FlashSpeech、NaturalSpeech 3，並寫明「Used as tokenizer of audio（AR modeling）or the latent representation of audio（Diffusion modeling）」。這些線索聚焦在『通訊編解碼以外的應用』與『把音訊作為 tokenizer/latent』，指向神經語音通訊編解碼器主題，而非『Universal Audio Foundation Model』。"
     },
     {
       "source": "fIoCxwVobEo",
@@ -10676,8 +10676,8 @@
         "Zjpl84KCTvw",
         "JidtdZVtpkI"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫著「Beyond Communication」，子彈列出 AudioGen、AudioLM、MusicLM、MusicGen、VALL-E、XTTS、FlashSpeech、NaturalSpeech 3，並註記『Used as tokenizer of audio… or the latent representation of audio』。主題與『通用音頻基礎模型/神經音頻』相關，但畫面上沒有講者姓名、學校、或該演講標題/連結等直接標識。"
     },
     {
       "source": "fIoCxwVobEo",
@@ -10694,8 +10694,8 @@
         "Zjpl84KCTvw",
         "zxFTrb_xGD0"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫著『Beyond Communication』，列出 AudioGen、AudioLM、MusicLM、MusicGen、VALL-E、XTTS、FlashSpeech、NaturalSpeech 3，並註記『Used as tokenizer of audio… or the latent representation of audio…』；主題為通用音訊/語音生成與表示，但畫面上沒有出現講者姓名、學校、或『Challenges in Developing Universal Audio Foundation Model』等標題或連結。"
     },
     {
       "source": "fIoCxwVobEo",
@@ -10708,8 +10708,8 @@
       "keyword_match": "之前沒提",
       "context": "音頻 CCH的優勢之一。另一個優點是，我們可以將文字與文字結合，使用文字作為 條件，從而建立文字到音樂、文字到音訊或語音模型。第三個優點是，例如，我們可以發展這種聯合功能模型來進行壓縮或理解。嗯，最近關於 音頻 處理（Audio PAL）的工作我們之前沒提到，但我們來談談這個。這樣做有很多優勢，例如建立神經 音訊編碼（Neuro Audio Codex）。但是，目前神經音訊編碼的限制在於，它的 音訊編碼（Neuro Audio Codex）。但是，目前神經音訊編碼的限制在於，它的 詞元率通常很高。我們之前解釋過，神經音訊編碼的優點在於它能處理大型語言模型，因為 詞元率通常很高。我們之前解釋過，",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「Limitations of Current Neural Codecs」，條列「High token rate (e.g., 6kbps Descript audio codec has 600 tokens per second)」、「Poor reconstruction quality at low bit rate (e.g., 0.6 kbps)」、「Falling short in capturing semantic information（HEAR、AudioMAE）」等，內容與老師 caption 提到的神經音訊編碼限制與高詞元率相符；但畫面上沒有演講標題、講者姓名或該影片連結，無法強證是該支影片。"
     },
     {
       "source": "fIoCxwVobEo",
@@ -10725,8 +10725,8 @@
         "JidtdZVtpkI",
         "zxFTrb_xGD0"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫『AudioMAE (Huang et al. 2022)』，內容是自監督 ViT 以重建 mel-spectrogram 補丁與 MSE 損失的結構圖；主題屬於音訊基礎模型預訓練範疇，與所猜影片主題相符，但畫面未出現該演講標題、講者姓名或連結，無法確定就是那支影片。"
     },
     {
       "source": "FN8jclCrqY0",
@@ -10795,8 +10795,8 @@
       "keyword_match": "之前在 machine learning 的課",
       "context": "一個 operation 的 region 是 這個 neuron 的 output 是 0 另外一個 operation 的 region 是 input = output 那我們之前在 machine learning 的課裡面 我們都講過 ReLU 的 network 那時候會告訴你說，0 的那些 就把它拿掉，他就好像不存在一樣 剩下的部分，就好像是一個 linear 的 function 這個時候很多人就會問我說 其實 ReLU 只是 linear 的 function，那不是很弱嗎 但他不完全是一個 linear 的 function，他是一個 piecewise linear 的 ",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「Upper Bound of Linear Pieces」，圖中是 ReLU 網路的節點與連線，部分節點標上 0，並寫著『Each “activation pattern” defines a linear function. N neurons → 2^N “activation patterns” → 2^N “linear pieces”』，內容與老師口述關於 ReLU 的 piecewise linear 特性相符，但畫面上沒有該『解剖小龍蝦 — 以 OpenClaw 為例介紹 AI Agent 的運作原理』的標題、連結或明確引用。"
     },
     {
       "source": "FN8jclCrqY0",
@@ -11064,8 +11064,8 @@
       "keyword_match": "上課",
       "context": "那還講了另外一個更深入的 怎麼自動做backpropagation的方法 也就是computational graph 那這個也是花了一個小時左右的時間講的 因為上課的時間是有限的 所以後來這部分就沒有放在實體的課堂上 但如果大家有興趣的話 還是鼓勵你把這些技術深入的去了解它 那其實瞭解訓練的原理 對你的幫助就是 更清楚為什麼有些network架構是這樣設計 Transformer它真正的設計的好處 並不是什麼無窮長的memory",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片上直接貼了兩支影片：左下寫『ML Lecture 7: Backpropagation』附 YouTube 連結 https://youtu.be/ibJpTrp5mcE；右下寫『Computational Graph & Backpropagation』附連結 https://youtu.be/-yhm3WdGFok?...，並非『Lecture 3: Roadmap of Improving Model』。"
     },
     {
       "source": "gjsdVi90yQo",
@@ -11106,8 +11106,8 @@
       "keyword_match": "上課",
       "context": "好 那今天呢 想跟各位同學講的是語音語言模型的發展 那其實在過去的上課錄影裡面,有講過影像生成是怎麼做到的 怎麼用類似語言模型的技術來做到影像生成 大家也知道說影像生成最近非常的熱門 比如說吉普利生圖是幾乎每個人都玩過的東西 好,那我們今天想要跟大家分享的是語音是怎麼被用類似語言模型的技術來產生出來的 那今天要跟大家講的是語音語言模型的發展 那我知道說也許多數同學未來並不會從事語音相關技術的研究 但是從語音的發展也許可以給你帶來一些啟發 看看不同領域的人",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫著「可以聽和說的語音語言模型」，配圖為拿麥克風的機器人，主題明確是語音/語音語言模型，與所猜的『第十一講：今天你想為 Foundation Model 裝備哪些 Task Vector？淺談神奇的 Model Me』不符，畫面無影片標題或連結指向該講。"
     },
     {
       "source": "gkAyqoQkOSk",
@@ -11162,8 +11162,8 @@
       "keyword_match": "我們也介紹過",
       "context": "那裡面就詳述了語音領域這些Self-supervised Model發展的歷史 那橫軸是時間 那這邊每一個點呢 代表一個模型 那可以看到在2020、2021年的時候, 有很多各式各樣的Self-supervised Model被創造、被發展出來。 那如果你不想看文章的話,其實在2022年的機器學習的課程,我們也介紹過語音跟影像上的Self-supervised Model,你可以看這個課程,花一個多小時的時間告訴你說,影像跟語音上的這些Encoder是怎麼在Self-supervised Learning的情境下,也就是沒有標註資料的情境下被訓練出來的。 所以總之已經有很多現成的Encoder",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右下角清楚印有 YouTube 連結 https://www.youtube.com/watch?v=lMIN1iKYNmA，左下角還嵌入該影片縮圖與標題『【機器學習 2022】語音與影像上的神奇自督導式學習(Self-supervised Learning)模型』，與老師口白主題相符，但並非你猜的『【機器學習2022】開學囉~ 又要週更了~』。"
     },
     {
       "source": "gkAyqoQkOSk",
@@ -11190,8 +11190,8 @@
       "keyword_match": "上一堂",
       "context": "就是這個樣子 所以人們在這個地方卡了很久 那接下來我們就告訴你說 後來是怎麼取得了突破 那在上一堂課裡面 我們結束再告訴你說 就算是有上萬小時的語音訊號 也訓練不了一個好的語音語言模型 接下來我們要先問 為什麼會這個樣子呢 想想看喔 假設你現在呢 在YouTube上爬了100萬小時的語音訊號",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫「以文字模型作為語音模型的 Foundation Model」，另外一張投影片標示 Pre-trained Speech LLM、未標註語音資料、並引用 arXiv:2306.02207；內容聚焦語音語言模型與語音資料，與「今天你想為 Foundation Model 裝備哪些 Task Vector？淺談神奇的 Model Me」不符，未見 Task Vector 或 Model Me 字樣。"
     },
     {
       "source": "gkAyqoQkOSk",
@@ -11292,8 +11292,8 @@
       "keyword_match": "上課",
       "context": "所以今天講的都是一些很新的研究成果 好 那 RNN 的部分呢 我們這門課就不會提到 假設你對 RNN 有興趣的話 以下是這一門課之前的上課錄影 那 RNN 的部分 因為這一次不會講到 所以特別有做了英文的版本 RNN 呢 是中文英文版本 都同時有放在 YouTube 上面 好 最後呢 Self-attention 也可以被用在 Graph 上面 記得我們在這一堂 這一份投影片",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫著「To learn more about RNN ……」，並放了兩個指向 RNN 教學的 YouTube 連結與 QR code： https://youtu.be/xCGidAeyS4M（in Mandarin）與 https://youtu.be/Jjy6ER0bHv8（in English）。主題明確是 RNN 延伸資源，非自注意力機制影片。"
     },
     {
       "source": "gmsMY5kc-zw",
@@ -11306,8 +11306,8 @@
       "keyword_match": "上課",
       "context": "那這邊呢 一樣我們也沒有辦法細講了 GNN 這邊坑也是很深啊 這邊水是很深 那就放一下助教之前上課的連結 大概花了快三個小時 在講 Graph Neural Network 而且其實還沒有講完 就告訴你說這個 Graph Neural Network 也是有非常深的技術 這邊水也是很深 那這不是我們今天這一堂課可以講的內容 好 那其實這個 Self-attention 啊",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫「Self-attention for Graph」，下方寫「To learn more about GNN …」，並直接列出兩個 YouTube 短連結（https://youtu.be/eybCctNKwzA 與 https://youtu.be/M9ht8vsVEw8，標註 in Mandarin）。主題與 GNN 教學吻合，但無法從畫面確認其中之一就是「[TA 補充課] Graph Neural Network (2/2)」。"
     },
     {
       "source": "hSXFuypLukA",
@@ -11380,8 +11380,8 @@
         "O2VkP8dJ5FE",
         "HYUXEeh3kwY"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫著「Adam: RMSProp + Momentum」，並在右上角註明原始論文連結（https://arxiv.org/pdf/1412.6980.pdf），內容是 Adam 的演算法步驟與註記。這更像是在介紹自動調整學習率與自適應優化器（Adam/RMSProp），而非著重於『批次與動量』的主題。"
     },
     {
       "source": "IB_ADssBomk",
@@ -11394,8 +11394,8 @@
       "keyword_match": "我們不是講過",
       "context": "P 有甚麼 是不是沒講到 Progressive GAN 沒講到 Progressive GAN 所以現在講一下 Progressive GAN 是甚麼 我們不是講過 **** GAN，可以小張的 image 產生大張的 image Progressive GAN 是 NVIDIA 做的，他的概念完全一樣 就從小張的 image 一直生、一直生，生到大張的他從 4x4 生到 8x8 到 16x16 最後生到 1024x1024 超大張的 image，連毛細孔都看的到的那種 非常的 realistic Q 有甚麼 Q 還真的沒有，我覺得 Q 還滿好湊的 你把用在 Reinforcement Le",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片以字母表排列，於 P 下方標示「Progressive GAN」，旁邊還有「MMGAN」「NSGAN」「OTGAN」等，屬於 GAN 變種總覽的頁面；但畫面未出現影片標題或連結，無法直接指向特定那支「GAN Lecture 3 (2018): Unsupervised Conditional Generation」。"
     },
     {
       "source": "ibJpTrp5mcE",
@@ -11436,8 +11436,8 @@
       "keyword_match": "上課",
       "context": "怎麼用一個模型負責主導 有哪些語言模型真正出來做事 你可以看一篇paper叫做 Frugal GPT 那我過去上課的錄影已經有特別 講過這個技術 可以參考過去上課的錄影 看看怎麼用一個模型來分配工作 你可以讓模型彼此合作 達到比GPT-4更好的效果 而且使用更低廉的成本 那這是合作的其中一種方式 那還有很多其他的合作方式",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「模型合作：讓合適的模型做合適的事情」，內含 FrugalGPT（https://arxiv.org/abs/2305.05176）的連結，並在右下角標註了兩個 YouTube 連結（vxxPtCbG9c0、VpKN3KvSK6c）。主題與描述相符，但畫面未出現「【生成式AI導論 2024】第3講（上）」的標題或連結，無法確定就是該支影片。"
     },
     {
       "source": "inebiWdQW-4",
@@ -11450,8 +11450,8 @@
       "keyword_match": "上課",
       "context": "你可以看一篇paper叫做 Frugal GPT 那我過去上課的錄影已經有特別 講過這個技術 可以參考過去上課的錄影 看看怎麼用一個模型來分配工作 你可以讓模型彼此合作 達到比GPT-4更好的效果 而且使用更低廉的成本 那這是合作的其中一種方式 那還有很多其他的合作方式 我們之前也有講到說 讓模型反省",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫「模型合作：讓合適的模型做合適的事情」，左下角標註 FrugalGPT 並附 arxiv 連結（arxiv.org/abs/2305.05176），右下角明確列出兩個 YouTube 短連結（youtu.be/vxxPtCbG9co、youtu.be/VpKN3KvSK6c），主題與老師口述相符，但投影片未顯示所猜影片的標題，無法確定就是該支。"
     },
     {
       "source": "inebiWdQW-4",
@@ -11478,8 +11478,8 @@
       "keyword_match": "之前的錄影已經講",
       "context": "語言模型可以組成社群嗎? 你可以看這個去年4月Stanford發表的論文 他們做了一個語言模型的小鎮 裡面所有的村民都是語言模型 那這個我在之前的錄影已經講過了 所以我就把錄影連結放在這邊給大家參考 那這是一個非常有趣的實驗 你一定要看這個錄影 你可以看到說語言模型跟語言模型之間 還會發展出淡淡的戀愛故事這樣子 真的真的對你一定要看這個影片 那看這個影片呢 如果你沒有聽之前這個課程裡面講的",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右上角清楚放了 YouTube 短連結「youtu.be/G44Lkj7XDAs」與論文連結「arxiv.org/abs/2304.03442」，標題為「由 AI 組成的社群!」，配圖為 Generative Agents 的小鎮截圖與對話框；並未出現你所猜的那支課程影片標題或連結。"
     },
     {
       "source": "inebiWdQW-4",
@@ -11492,8 +11492,8 @@
       "keyword_match": "之前這個課",
       "context": "你可以看到說語言模型跟語言模型之間 還會發展出淡淡的戀愛故事這樣子 真的真的對你一定要看這個影片 那看這個影片呢 如果你沒有聽之前這個課程裡面講的 各種神秘的Prompt技巧的話 你聽這個影片可能會覺得有一些困難 但是如果因為我們已經講過 各式各樣強化語言模型能力的技巧了 所以當你看這個影片的時候 你就可以想一下 他其實用的每一個技巧 都是我們到目前為止的課堂上",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫「由 AI 組成的社群!」，配圖是 Smallville/Generative Agents 的小鎮與對話框；右上角清楚標出連結 https://arxiv.org/abs/2304.03442 與 YouTube 短連結 https://youtu.be/G44LkjX7DsA?…，並未出現「【生成式AI導論 2024】第3講」的標題或連結。"
     },
     {
       "source": "inebiWdQW-4",
@@ -11590,8 +11590,8 @@
       "keyword_match": "我們有講過",
       "context": "但是有很多各種各樣的變化 常見的是 Probability latent semantic analysis (PLSA) 另外一個 latent Dirichlet allocation (LDA) 那這一邊就把 reference 列在這邊，給大家參考 前面我們有講過另外一個 LDA 在 machine learning 裡面，有兩個 LDA 然後是完全不一樣的東西 就是這麼回事 這邊就是一些 reference 給大家參考 其實這種 Dimension Reduction 的方式 這邊還沒有列 這邊只列一些跟 PCA 比較像、有比較關係的 這個 Dimension Reduction 的",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「Matrix Factorization for Topic analysis」，左側列出 LSA 的詞-文件矩陣範例（投資、股票、經營、選舉、立委 vs Doc1-Doc4），右側註記 TF/IDF 與『Latent factors are topics（財經、政治⋯）』；底部列出 PLSA 與 LDA 的經典論文引用（Hofmann 1999；Blei/Ng/Jordan 2003）。內容與『Word Embedding／主題模型』單元相符，但畫面未出現影片標題或連結以明確指向該支影片。"
     },
     {
       "source": "j82QLgfhFiY",
@@ -11686,8 +11686,8 @@
         "Z6b5-77EfGk",
         "bJFtcwLSNxI"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「Model Merging」，箭頭上多次標註「Post-training (fine-tune)」，右側還寫有「Prevent Forgetting」，與字幕中提到的後訓練與避免遺忘情境相符，但畫面上沒有顯示第十講或「Model Editing」的明確標識或連結。"
     },
     {
       "source": "jFUwoCkdqAo",
@@ -11714,8 +11714,8 @@
       "keyword_match": "過去的機器學習課",
       "context": "你就可以找出一個函式 就可以讓機器輸入一段文字 輸出一張圖片 那其實生成這件事啊 我在課堂上過去的機器學習課堂一直都是有提到的 這一頁投影片是來自五年前 2019年機器學習課堂的投影片 這一頁投影片是這樣講的 大家不知道有沒有看過獵人這個漫畫 獵人是這樣子的一個故事的 你以為的五大洲並不是世界的全部 這只是世界的一小部分 其實我們都是活在一個很大的湖裡面",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫「AI 畫圖也就是個函式（Stable Diffusion, Midjourney, DALL·E）」並示意『輸入文字→輸出圖片』；另一張投影片明寫「2019 年的機器學習投影片」，左下角註明「圖片來源：漫畫《獵人》」。這些與描述的內容（文字轉圖片、提到2019年的課與獵人比喻）相符，但畫面未出現「【生成式人工智慧與機器學習導論2025】第０講」的標題或連結。"
     },
     {
       "source": "JGtqpQXfJis",
@@ -11742,8 +11742,8 @@
       "keyword_match": "第一堂",
       "context": "我要找的就是這樣子的 Generator 這邊把它寫作 G* 所以我們這邊要做的事情 跟一般 Train Network 其實非常地像 我們第一堂課就告訴你說 我們定義了 Loss Function 找一組參數 Minimize Loss Function 我們現在其實也定義了我們的 Loss Function 在 Generation 這個問題裡面 我們的 Loss Function 就是 PG 跟 Pdata 的 Divergence 就是它們兩個之間的距離 它們兩個越近",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片上顯示：Our Objective；G* = arg min_G Div(P_G, P_data)（下方註解：Divergence between distributions P_G and P_data）；左上角 Normal Distribution；右上角 c.f. w*, b* = arg min L_{w,b}；圖示說明 as close as possible；頁碼 32。這些內容與老師口白（用 divergence 當 loss 讓 P_G 接近 P_data）相符，但投影片未標示課程名稱或第0講等資訊，無法確定就是該支影片。"
     },
     {
       "source": "JZvEzb5PV3U",
@@ -11756,8 +11756,8 @@
       "keyword_match": "上課",
       "context": "我們拿它來當做 Aauto-Encoder 的作業 因為我相信 你未來有很多的機會用得上異常檢測這個技術 那實際上有關異常檢測更完整的介紹 我們把過去上課的錄影放在這邊 給大家參考 好 那以上就是有關 Aauto-Encoder 的部分 在我們請助教來講作業之前 我們看一下大家有沒有問題想要問的 欸 大家有問題想要問嗎 沒有嗎 好 如果暫時沒有問題的話 那我們就請助教來講下一個作業",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "Slide shows a section titled \"More about Anomaly Detection\" with seven YouTube short links (e.g., youtu.be/gDp2LXGnVLQ, youtu.be/cYrNjLxkoXs, … youtu.be/6W8FqUGYyDo). Another slide titled \"Concluding Remarks\" lists topics including \"Basic Idea of Auto-encoder,\" suggesting it’s from an Auto-encoder lecture, but no explicit title or direct reference to the specific video \"自編碼器 (Auto-encoder) (上) – 基本概念\" appears on the slides."
     },
     {
       "source": "Ky1ku1miDow",
@@ -11798,8 +11798,8 @@
       "keyword_match": "上課",
       "context": "大家都會用芝麻街的人物名字去命名自己的模型 舉例來說在他的前作有一個東西叫 Elmo Elmo 也是芝麻街的一個紅色怪物 BERT 也是一個芝麻街的人的名字 這個老師上課投影片應該也是有的 簡單地 remind 一下他在幹嘛 他的架構長怎樣 跟剛剛的 transformer 差不多 差不多架構就是 他有 12 層 BERT 有 12 層 每一層都是一個 transformer 的 encoder 在 encoder 裡面都會有一個 self-attention layer",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片明確寫著「BERT」，並出現芝麻街角色圖片與 BERT 架構圖（12 層、每層含 self-attention），主題為 NLP 的 BERT，而非影片標題所列之 GAN 系列（SAGAN/BigGAN/SinGAN/GauGAN/GANILLA/NICE-GAN）。"
     },
     {
       "source": "LpyL4nZSuqU",
@@ -11872,8 +11872,8 @@
       "keyword_match": "之前的生成式 AI 這門課",
       "context": "曾經有一度有各式各樣的神奇咒語 可以強化語言模型的能力 但是現在這些神奇的咒語 越來越不神奇 在一年半之前的生成式 AI 這門課 會導讀這堂課裡面 我其實就跟大家分享過說 其實神奇咒語已經沒有以前那麼神奇了 這頁投影片是舊的，一年半前的投影片 所以如果你是在 2023 年 6 月的時候 你跟 GPT-3.5 叫它去解一些數學應用問題 沒有神奇咒語正確率 72%",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右上角明確標註《生成式人工智慧導論 2024》並附上 YouTube 連結：https://youtu.be/A3Yx35KrSN0?t=1035，與使用者猜測的「生成式AI時代下的機器學習(2025) 第二講」不符。"
     },
     {
       "source": "lVdajtNpaGI",
@@ -11886,8 +11886,8 @@
       "keyword_match": "我們其實上週講過",
       "context": "它沒有辦法翻譯卡拉蒙語的狀態 好，剛才講的是 User Prompt 那這個語言模型呢 還要有 System Prompt 那我們其實上週講過 System Prompt 的概念 System Prompt 是開發語言模型的人 這個開發語言模型平台的人 覺得語言模型每次互動的時候 都需要有的資訊 那 Claude 這個模型呢 它的 System Prompt 是公開的 所以可以在底下這個連結裡面 看到 Claude 的 System Prompt 長什麼樣子",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「System prompt」，子彈點寫出『System prompt of Claude: https://docs.anthropic.com/en/release-notes/system-prompts#august-5-2025』，並列出『Claude Opus 4.1』，右上角註記『網路上有其他版本…此處用 Claude 官方公布的版本』；內容與老師口述「Claude 的 System Prompt 是公開的，連結可見」高度吻合，但畫面未顯示課程標題或影片連結，無法確定就是該支影片。"
     },
     {
       "source": "lVdajtNpaGI",
@@ -11956,8 +11956,8 @@
       "keyword_match": "第七講",
       "context": "而是它自己放進去的。 這個模型就是根據它自己產生的 context， 再來做文字接龍，再產生最終的答案。 那如果你想知道模型是怎麼學會做深度思考的， 那在上個學期的這個機器學習的課程的第七講， 有講說像 DeepMind R 系列這種模型， 是怎麼練成深度思考能力的。 那我把這個影片連結留在這邊， 如果你有興趣的話給大家參考。 好，所以我們講了一連串 context 裡面要包含什麼， 我們說要有 User Prompt、要有 System Prompt、要有對話歷史記錄、 也要有長期的記憶、 要有一些搜尋引擎給我們的結果、",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右側直接嵌了 YouTube 畫面，標題可讀為「【生成式AI時代的機器學習(2025)】第七講：DeepSeek‑R1 這樣的大型語言模型是如何進行『深度思考』（Reasoning）的？」且下方清楚標示連結：https://youtu.be/bJFtcwLSNxI"
     },
     {
       "source": "lVdajtNpaGI",
@@ -11970,8 +11970,8 @@
       "keyword_match": "曾經講",
       "context": "當然是一個虛擬的小鎮， 讓這些 Agent 互動， 看看會發生什麼事情。 我們在 23 年的時候， 其實曾經講過這個史丹佛小鎮的故事， 如果你有興趣的話， 可以看一下右上角的錄影連結。 那在史丹佛小鎮裡面， 每一個 AI 他們都有名字， 比如這個 AI 叫做 Isabella。 Isabella",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右上角直接標『上課錄影：https://www.youtube.com/watch?v=G44Lkj7XDsA』，並附『Paper: https://arxiv.org/abs/2304.03442』；畫面是 Stanford Generative Agents 小鎮示意（咖啡店/學校/公園等對話框）與角色名「Isabella」。這些都對應史丹佛小鎮/Generative Agents，而非『解剖小龍蝦 — OpenClaw』。"
     },
     {
       "source": "lwe3_x50_uw",
@@ -12070,8 +12070,8 @@
       "keyword_match": "第七講",
       "context": "這些語言模型某種程度上 有自我反省的能力 那其實今天要講的課程內容 有很大一部分 是 2024 年機器學習第七講的延伸 在去年的這一堂課的第七堂課 我們講了怎麼讓模型有 reasoning 的能力 當然 reasoning 這件事情 今天大家可能一點都不陌生 幾乎每一個你線上用的語言模型 都已經有 reasoning 的功能了 但是在 2025 年的時候 這仍然是一個相對比較新的技術",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標示「[生成式AI時代下的機器學習(2025)] 第七講：DeepSeek-R1 這類大型語言模型是如何進行『深度思考』(Reasoning)的？」並附上 YouTube 連結 https://youtu.be/bJFcwLSNxI；另一張寫「ChatGPT 可以自我反省」(2023) 並附連結 https://youtu.be/m7dUFlX-yQI。沒有出現「導論2025 第1講」的標題或連結。"
     },
     {
       "source": "m3i2mk5hs8U",
@@ -12084,8 +12084,8 @@
       "keyword_match": "第七堂",
       "context": "有自我反省的能力 那其實今天要講的課程內容 有很大一部分 是 2024 年機器學習第七講的延伸 在去年的這一堂課的第七堂課 我們講了怎麼讓模型有 reasoning 的能力 當然 reasoning 這件事情 今天大家可能一點都不陌生 幾乎每一個你線上用的語言模型 都已經有 reasoning 的功能了 但是在 2025 年的時候 這仍然是一個相對比較新的技術 那今天呢",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫「相關課程錄影」，下方清楚標示【生成式AI時代下的機器學習(2025)】第七講：DeepSeek-R1…如何進行『深度思考』(Reasoning) 的？並附上 YouTube 連結與 QR code，明確指向第七講，而非第０講。"
     },
     {
       "source": "m3i2mk5hs8U",
@@ -12213,8 +12213,8 @@
         "F58vJcGgjt0",
         "AihBniegMKg"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片只顯示『請檢查上述資訊是否正確』與『(本頁投影片為 GPT-4 的結果)』，內容示範讓模型自我檢查/更正錯誤的對話與建議清單，主題屬於提示與自我反省技巧，並未出現『預訓練（Pre-train）』或該影片標題/連結等標識。"
     },
     {
       "source": "m7dUFlX-yQI",
@@ -12269,8 +12269,8 @@
       "keyword_match": "上課",
       "context": "所以你是把一個 Domain 學到的知識 用在另外一個 Domain 上 所以它可以看做是 Transfer Learning 的其中一個環節 那在過去上課的錄影裡面 有完整的講了 Transfer Learning 相關的技術 那因為今天時間有限 我們就只 Focus 在 Domain Adaptation 的部分就好 如果你有興趣的話 你可以再看一下過去上課的錄影 好 那 Domain Shift 其實有很多種不同的類型",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片下方明確寫著「Transfer learning: https://youtu.be/qD6iD4TFsdQ」，主題為 Domain shift/Domain adaptation，並非增強式學習概述。"
     },
     {
       "source": "Mnk_oUrgppM",
@@ -12315,8 +12315,8 @@
         "jNY1WBb8l4U",
         "MP0BnVH2yOo"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「More Generative Models」，列出『Variational Autoencoder (VAE)』與『FLOW-based Model』兩個主題，並附上對應的 YouTube 短連結（youtu.be/8zomhgKrsmQ、youtu.be/uXY18nzdSsM）。畫面沒有出現『GAN(二)』或『WGAN』等明確字樣或連結，但主題屬於生成式模型，與 GAN 系列相關。"
     },
     {
       "source": "MP0BnVH2yOo",
@@ -12332,8 +12332,8 @@
         "4OWp0wDu6Xw",
         "MP0BnVH2yOo"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "Slide title 'More Generative Models' with two QR codes and YouTube short links: 'Variational Autoencoder (VAE) – https://youtu.be/8zomghKrsmQ' and 'FLOW-based Model – https://youtu.be/uXY18nzdSsM'. No mention of GAN or WGAN."
     },
     {
       "source": "mpuRca2UZtI",
@@ -12346,8 +12346,8 @@
       "keyword_match": "之前機器學習的課",
       "context": "我們就來講input 這邊的input我們討論的是 activation 那activation其實在 之前機器學習的課程的時候 它其實就是叫做 每一個模型 一個模型的某一層 對於這個input 所產生出來的反應 就叫activations 所以每一層的output 都會有一個activations",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫『3. activations』，內容有『3.1 Activation recomputation (aka gradient checkpointing)』與示意：Assume batch size = 1、256/16k tokens、LLM weights、x32 layers、attention(40 GB)、feed forward(2.2 GB)、layer norm；主題與LLM訓練與對齊中的activation/記憶體相關相符，但畫面未出現該影片標題或連結，無法確定就是該支。"
     },
     {
       "source": "mPWvAN4hzzY",
@@ -12518,8 +12518,8 @@
       "keyword_match": "上課",
       "context": "這裡面每一個敘述都是對的 但是合起來是錯的 他還推薦了一些YouTube的影片 你看第一個推薦的影片 就是我們這一堂課的上課的錄影 因為這個Gemini是為了去做網路搜尋的 他一搜就搜到我們上課的錄影 但也推薦了一些古裝劇 是另外一個李宏毅演的古裝劇 所以每一個連結都是對的 但全部湊起來就不是對的 那至於要怎麼解決這個問題呢 你可以看一下姜承翰助教寫的文章",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片畫面列出「關於李宏毅的YouTube影片」，第一個連結清楚顯示為「【生成式AI導論 2024】第1講：生成式AI是什麼？」；另有包含古裝劇相關連結，與老師口述相符，但未見「第12講：淺談檢定大型語言模型能力的各種方式」的標題或連結。"
     },
     {
       "source": "MSnvknLywUc",
@@ -12532,8 +12532,8 @@
       "keyword_match": "上課",
       "context": "他還推薦了一些YouTube的影片 你看第一個推薦的影片 就是我們這一堂課的上課的錄影 因為這個Gemini是為了去做網路搜尋的 他一搜就搜到我們上課的錄影 但也推薦了一些古裝劇 是另外一個李宏毅演的古裝劇 所以每一個連結都是對的 但全部湊起來就不是對的 那至於要怎麼解決這個問題呢 你可以看一下姜承翰助教寫的文章 他提出來一個新的Facebook 叫DeFacecode,就是針對這種問題進行處理",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片的『關於李宏毅的YouTube影片』清單中，第一個條目清楚寫著「【生成式AI導論 2024】第1講：生成式AI是什麼？」；畫面未出現「第12講」的標題或連結，其他鏈結還包含古裝劇等內容。"
     },
     {
       "source": "N6aRv06iv2g",
@@ -12560,8 +12560,8 @@
       "keyword_match": "上課",
       "context": "有一個問題我們今天就不細講了 叫做 Multi-Modality 的問題 那如果你想要這個深入了解 NAT 那就把之前上課 助教這個上課補充的內容呢 連結放在這邊給大家參考 NAT 也是一個大坑啊 助教也是講了一個半小時 才稍微給大家一個 NAT 的 大概 大致的描述 所以這也是個大坑 不是我們今天可以講的 就只是告訴大家說",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "投影片第36頁標題寫著「AT v.s. NAT」，並在重點列出「NAT is usually worse than AT (why? Multi-modality)」。下一頁（第37頁）出現『To learn more……』及一個 QR code，底下清楚標出連結：https://youtu.be/jvyKmU4OM3c，但未顯示該連結的影片標題，無法從畫面確認是否為「【機器學習2021】自注意力機制 (Self-attention) (下)」。"
     },
     {
       "source": "N6aRv06iv2g",
@@ -12574,8 +12574,8 @@
       "keyword_match": "上課",
       "context": "那簡單來說就是有 那我們就不會細講 最早有從輸入複製東西的能力的模型 叫做 Pointer Network 那這個過去上課是有講過的 我把錄影放在這邊給大家參考 好 那後來還有一個變形 叫做 Copy Network 那你可以看一下這一篇 Copy Mechanism 就是 Sequence-To-Sequence 有沒有問題 你看 Sequence-To-Sequence Model",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「Copy Mechanism」，左側寫有「Pointer Network」，右側附有 YouTube 連結 https://youtu.be/VdQyqNQ9aww（含 QR code），下方列出論文「Incorporating Copying Mechanism in Sequence-to-Sequence Learning」(arXiv:1603.06393)。這些都指向 Copy/Pointer 機制而非「【機器學習2021】Transformer (上)」。"
     },
     {
       "source": "n9TlOhRjYoc",
@@ -12619,8 +12619,8 @@
       "keyword_match": "過去的課",
       "context": "為什麼要加上Soft-max呢 一個比較簡單的解釋 這一段到底要怎麼在數十分鐘內講完 我其實想了很久 如果是在過去的課程裡面 我會花很長一段時間 告訴你說這裡為什麼要加Soft-max 背後有什麼樣的假設 我們會先從generative的Model開始講起 然後一路講到Logistic Regression 各位知道為什麼這邊放一個Soft-max 它有什麼樣的歷史淵源 我們現在已經不是從那個角度切入",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片內容主題是『Regression / Classification』，並特別框出 softmax(y)，下方還寫「0 or 1」。畫面沒有出現任何與『批次 (batch) 與動量 (momentum)』相關的字樣、式子或連結，也未標示該影片標題或連結，主題明顯不符該支影片。"
     },
     {
       "source": "O2VkP8dJ5FE",
@@ -12647,8 +12647,8 @@
       "keyword_match": "上課",
       "context": "但是我這邊 是直接用舉例的方式來跟你說明 如果你真的非常想看數學證明的話 我把連結放在這邊 你可以一下過去上課的錄影 如果你不想知道的話 那我們就是舉一個例子來告訴你說 為什麼是Cross-entropy比較好 好 那現在我們要做一個3個Class的分類 我的Network先輸出y₁ y₂ y₃ 在通過soft-max以後 產生y₁' y₂'跟y₃' 那接下來假設我們的正確答案就是100",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左上角明確寫有連結：http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Deep%20More%20(v2).ecm.mp4/index.html，主題也在說 y1,y2,y3 經 softmax 與 cross-entropy，與使用者猜的 2021 年『局部最小值/鞍點』影片不符。"
     },
     {
       "source": "o_g9JUMw1Oc",
@@ -12801,8 +12801,8 @@
       "keyword_match": "上課",
       "context": "那其實在2023年的機器學習 已經花了很多時間 講了大資料的重要性 那大家如果有興趣的話 可以看看過去的這個上課錄影 你還是可以學到很多東西 好那現在啊 這個時間點pre-trained一般都用多大的資料嗎 我們來看看最近幾個比較知名的模型 用了多少資料 拉瑪3用多少資料呢 用15T個Token D6V3用了多少資料呢",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左側有 YouTube 連結與 QR code（https://youtu.be/qycxA-xX_OY），播放器下方標題為「【生成式AI】大模型 + 大資料 = 神奇結果？(2/3)：到底要多少資料才夠」，而非「【生成式AI】ChatGPT 原理剖析 (2/3) — 預訓練 (Pre-train)」。另一頁列出 LLaMA3、DeepSeek-V3 的預訓練資料量，內容也對應該影片主題。"
     },
     {
       "source": "Ozos6M1JtIE",
@@ -12815,8 +12815,8 @@
       "keyword_match": "第三堂",
       "context": "避免講出這些不該講的話 但也許這些知識都藏在模型的心中 它只是暫時被壓抑 不知道什麼時候又會跑出來 記得我們在第三堂課的時候 講過一個分析的方法叫做Large Length 我們說一個Transformer的Network 你可以看作是有一個Residual String 這個String上面的每一個點 你都可以做Unembedded 解析出模型心理想的詞彙是哪一個 這邊有一篇論文呢 就對GPT2跟它已經做DPO",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題寫「Pretrain 時看到不該看的東西後，難以真正清除」，右側是 Transformer 的 Residual Stream 與紅色標示的「Logit Lens」示意，左下角有 arXiv:2401.01967 連結。主題與第三講討論的 Logit Lens/Residual Stream 相符，但畫面未顯示該影片標題或連結，無法確定就是那支。"
     },
     {
       "source": "Ozos6M1JtIE",
@@ -12857,8 +12857,8 @@
       "keyword_match": "第一堂",
       "context": "我們是會希望我們 network 的 weight 值愈接近 0 愈好 那今天如果你 network 的 weight 值愈接近 0 愈好 其實你就會讓它的 output 愈平滑 如果你有上 machine learning 的話 第一堂課我們就講過說加入 regularization 以後 你 learn 出來的那個 function 加入 regularization 以後 你在 train regression 的時候 你 learn 出來的那個 function 它是會比較平滑的 那比較平滑其實就是意味著它的 sensitivity 是比較小的 因為 input 有變化的時候 outp",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「Sensitivity」，內容是 Jacobian 與 Frobenius norm 的公式，並寫著『Regularization is kind of minimizing sensitivity.』等機器學習概念，畫面上沒有提到 OpenClaw、AI Agent、或該影片標題/連結/截圖。"
     },
     {
       "source": "pivB5jEBOQw",
@@ -12913,8 +12913,8 @@
       "keyword_match": "過去機器學習這門課",
       "context": "他也不會做其他的事情 那BERT這個模型啊 他走的就是專才路線 那因為時間有限,我們今天就不會特別跟大家講BERT是怎麼成為專才的 你可以看一下過去機器學習這門課的錄影 瞭解BERT是怎麼透過fine tuning打造一堆專才出來 那過去講到BERT的時候呢 都會放這個實驗數據給大家看啦 這也是來自上古時代的文章,19年的文章 那裡面不同形狀的點代表不同的任務 所以這邊總共有124加3 這邊總共有9個不同的任務 那在這個圖上做的事情是打造了",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「路線一：打造一堆專才｜BERT 系列」，左下清楚標註「[機器學習 2021] 自我監督式學習 (二) — BERT 介紹」並附上 YouTube 連結 https://youtu.be/gh0hewYkigo；畫面內容是 BERT fine-tuning 各任務示意，與「解剖小龍蝦／OpenClaw／AI Agent」無關。"
     },
     {
       "source": "Q9cNkUPXUB8",
@@ -12927,8 +12927,8 @@
       "keyword_match": "過去講",
       "context": "他走的就是專才路線 那因為時間有限,我們今天就不會特別跟大家講BERT是怎麼成為專才的 你可以看一下過去機器學習這門課的錄影 瞭解BERT是怎麼透過fine tuning打造一堆專才出來 那過去講到BERT的時候呢 都會放這個實驗數據給大家看啦 這也是來自上古時代的文章,19年的文章 那裡面不同形狀的點代表不同的任務 所以這邊總共有124加3 這邊總共有9個不同的任務 那在這個圖上做的事情是打造了 以BERT為Pretrend模型打造了9個不同的磚材 那這邊每一條直線代表某一個Pretrend的模型",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左下明確寫有「[機器學習2021 自督導式學習 (Self-supervised Learning) (二) — BERT簡介]」並附上 YouTube 連結 https://youtu.be/gh0hewYkigo；頁面多處為 BERT fine-tuning 示意與 GLUE 分數圖（並標註來源 arxiv.org/abs/1905.00537），主題為 BERT 專才化，非「解剖小龍蝦／OpenClaw」影片。"
     },
     {
       "source": "Q9cNkUPXUB8",
@@ -12969,8 +12969,8 @@
       "keyword_match": "之前已經看過 adversarial 這個字在前面講",
       "context": "後面的 classifier 雖然可以把藍色的部分做好 但紅色的部分就無能為力 這邊希望做到前面 feature extractor可以把 domain 的特性去除掉 這招叫 domain-adversarial training等一下會講為甚麼出現 adversarial 這個字 之前已經看過 adversarial 這個字在前面講 GAN 的時候 GAN 就是 generative adversarial 的 model這邊又出現 adversarial 這邊 adversarial 跟 GAN 的原理是非常像的希望 feature extractor 可以把 domain 的特性消掉 也",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題明確寫著「Domain-adversarial training」，並配有 feature extractor → features f 的示意圖；主題是 domain-adversarial/domain adaptation，與「解剖小龍蝦—OpenClaw AI Agent」無關。右下有 EverCam 浮水印，沒有任何指向該 OpenClaw 影片的標題或連結。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -12983,8 +12983,8 @@
       "keyword_match": "這學期的課",
       "context": "那我現在呢打算用一堂課的時間 很快地帶大家看過生成式人工智慧 近年來發展的現況 以及未來大家可以關注的技術 那順便呢為這學期的課程做一個快速的概覽 那今天講這堂課的時候 我會假設大家對於生成式人工智慧 並沒有太多的認識 在假設你沒有相關背景知識的情況下來講這門課 但是這學期往後的課程 我會假設大家已經有看過 《生成式AI導論2024》的課程 跟《機器學習2021》的課程",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題顯示「一堂課搞懂生成式人工智慧的技術突破與未來發展」，下方有「李宏毅 Hung-yi Lee」字樣；與你猜測的影片標題「一堂課搞懂生成式人工智慧的原理」不完全一致，且畫面未見連結、課程年份（如2025）或「第1講」等明確標記。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -12997,8 +12997,8 @@
       "keyword_match": "上課",
       "context": "我會假設大家已經有看過 《生成式AI導論2024》的課程 跟《機器學習2021》的課程 然後來講接下來的課程 所以下一次上課啊 我們下週呢是連假 那下下週3月7號上課的時候 希望大家可以先預習以下課程 那個《生成式AI導論2024》的部分 假設你對大型語言模型一無所知 不知道它們是怎麼被訓練出來的 你可以先看《生成式AI導論2024》 那能夠全部看完最好",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標示「下一次上課前(3/07) 預習以下課程」，左欄清楚寫「生成式AI導論 2024」並顯示該系列多個縮圖，底部給出播放清單連結 https://www.youtube.com/playlist?list=PLJv_el3uVTsPz6CTopeRp2L2t4aL_Kgil；右欄為「機器學習 2021」並附上其播放清單連結。投影片未出現「2025」或「生成式人工智慧與機器學習導論2025」相關資訊。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -13011,8 +13011,8 @@
       "keyword_match": "上課",
       "context": "跟《機器學習2021》的課程 然後來講接下來的課程 所以下一次上課啊 我們下週呢是連假 那下下週3月7號上課的時候 希望大家可以先預習以下課程 那個《生成式AI導論2024》的部分 假設你對大型語言模型一無所知 不知道它們是怎麼被訓練出來的 你可以先看《生成式AI導論2024》 那能夠全部看完最好 那如果沒有辦法的話 希望至少可以看到第8講",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "YES",
+      "visual_evidence": "投影片左側標題寫「生成式AI導論 2024」，列出多支影片縮圖，其中清楚可見「【生成式AI導論 2024】第1講：生成式AI是什麼？」的縮圖與標題；下方並有該系列的 YouTube 播放清單連結與「至少看到第八講」說明。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -13025,8 +13025,8 @@
       "keyword_match": "第8講",
       "context": "不知道它們是怎麼被訓練出來的 你可以先看《生成式AI導論2024》 那能夠全部看完最好 那如果沒有辦法的話 希望至少可以看到第8講 那這個系列呢內容是非常輕鬆的 你就用你吃飯啊、運動啊、通勤的時間看一下子就看完了 那《機器學習2021》呢 希望你至少可以看到Transformer (下) 現在呢每天看一部影片 到下次上課前你也可以看到Transformer (下) 常常有同學會問說 老師的youTube頻道上現在有這麼多影片",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "YES",
+      "visual_evidence": "投影片左側列出「生成式AI導論 2024」播放清單，第一支影片標題清楚寫「【生成式AI導論 2024】第0講：課程說明 (17:15 有芙莉蓮雷)」，下方並附播放清單連結與註記「至少看到第八講」。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -13039,8 +13039,8 @@
       "keyword_match": "上課",
       "context": "你就用你吃飯啊、運動啊、通勤的時間看一下子就看完了 那《機器學習2021》呢 希望你至少可以看到Transformer (下) 現在呢每天看一部影片 到下次上課前你也可以看到Transformer (下) 常常有同學會問說 老師的youTube頻道上現在有這麼多影片 那如果要看的話應該從哪裡看起 那我就跟大家推薦 假設你不知道要從哪裡看起的話 那就看這兩個系列 生成式AI導論2024 跟機器學習 (ML) 2021 那這兩個系列裡面是有放出完整的內容",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片上明確列出兩個系列：左側寫『生成式AI導論 2024』並附上 YouTube 播放清單連結；右側寫『機器學習 2021』並附清單連結，且註明『至少看到第八講』與『至少看到「Transformer(下)」』。畫面未出現『生成式AI時代下的機器學習(2025)』或『AI Agent』相關字樣或連結。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -13056,8 +13056,8 @@
         "gjsdVi90yQo",
         "Xnil63UDW2o"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左側是 YouTube 畫面，標題寫著「Theory I: Why Deep Structure? 李宏毅 Hung-yi Lee」，右側清楚顯示播放清單名稱為「Deep Learning Theory」以及多個章節（如「Deep Learning Theory 1-1: Can shallow network fit any…」）。下方還有清楚的連結：https://www.youtube.com/watch?v=KKT2VkTdFyc&list=PLJV_el3uVTsOh1F5eo9txATa4iww0Kp8K。這些都指向『Deep Learning Theory』系列，而非『人工智慧的微創手術 — 淺談 Model Editing』。"
     },
     {
       "source": "QLiKmca4kzI",
@@ -13196,8 +13196,8 @@
       "keyword_match": "第七講",
       "context": "現成的模型 在過去的課程裡面 已經講得非常多了 在這門機器學習 導論這門課第七講 完整地講了一個大型語言模型 是怎麼被訓練出來的 第八講講說怎麼微調 怎麼調整一個現成模型的參數 這部分大家可以再回去 自己先預習一下 從我們本週開始的作業 是跟微調模型有關的",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片下方清楚標示「【生成式人工智慧與機器學習導論2025】第7講：大型語言模型的學習歷程」與 YouTube 連結 https://youtu.be/YJoegm7kiUM?si=6idTFUQ9MkNgUQ5；以及「第8講：通用模型的終身學習（Fine-tuning, Model Editing, Model Merging, Test-Time Training）」與連結 https://youtu.be/EnWz5XuOnIQ?si=pXLKotxfFb9pDPqR。未出現第2講或『上下文工程』相關字樣。"
     },
     {
       "source": "R6fZR_9kmIw",
@@ -13210,8 +13210,8 @@
       "keyword_match": "第八講",
       "context": "在這門機器學習 導論這門課第七講 完整地講了一個大型語言模型 是怎麼被訓練出來的 第八講講說怎麼微調 怎麼調整一個現成模型的參數 這部分大家可以再回去 自己先預習一下 從我們本週開始的作業 是跟微調模型有關的 所以這些內容對你應該是蠻有幫助的 但是另外一方面 這個 AI Agent",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片清楚寫『[生成式人工智慧與機器學習導論2025] 第7講：大型語言模型的學習歷程』與 YouTube 連結 youtu.be/YOegm7kiUM...；右側寫『第8講：通用模型的終身學習 (Fine-tuning, Model Editing, Model Merging, Test-Time Training)』與連結 youtu.be/EnWz5XuOnIQ...。畫面未出現『如何讓 Transformer 知道輸入 Token 的順序？』或 Positional Embedding 的字樣或連結。"
     },
     {
       "source": "R6fZR_9kmIw",
@@ -13266,8 +13266,8 @@
       "keyword_match": "上片",
       "context": "自己要去改過去的 skill 檔 或者是直接產生 skill 檔 舉例來說 這邊就舉一個真實的例子 這個小金它照理說每天晚上都會上片 就每天晚上我睡前會看一下它今天做的影片 如果覺得可以的話就叫它傳到 YouTube 上 它唯一需要我 approve 的就是上傳 YouTube 這件事情 然後某一天晚上我就叫它上傳 YouTube 那小金現在其實已經有三隻了 就是有一隻在 OpenClaw 裡面 它是改裝 ChatGPT 然後有一隻在 Coze 裡面",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "PARTIAL",
+      "visual_evidence": "投影片標題為「如何從 Verbalized Feedback 學習」，右側有小龍蝦圖示，並標示「語言模型 → SKILL.md」的流程，與小龍蝦(OpenClaw)與 skill 檔的主題相符；但畫面未出現該影片標題、連結或「OpenClaw」字樣，無法強力指認。"
     },
     {
       "source": "rl_ozvqQUU8",
@@ -13308,8 +13308,8 @@
       "keyword_match": "我們沒有講過",
       "context": "然後通過 embedding layer 然後用 RNN 把這個 document 讀過一次 然後呢，把出現在最後一個 把這出現在最後一個時間點的 output 拿過來做 attention 我發現我們沒有講過 attention 是什麼，這部分你就聽聽就好 用 attention 以後呢，你可以把重要的 information 抽出來 再丟到 feed forward network 裡面去 得到最後的 output 那它也可以是多對多的 比如說你的 input/output 都是 sequences 但 output sequence 比 input sequence 短的時候 RNN 可",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫 Many to one，右上有引用 [Shen & Lee, Interspeech 16]，左側標示 Key Term Extraction，圖中是 embedding layer + RNN 的多對一結構示意；內容與 Fizz Buzz in Tensorflow（數字分類練習）主題不符，未見該影片標題或任何 Fizz Buzz/數字/模組程式碼的線索。"
     },
     {
       "source": "rTqmWlnwz_0",
@@ -13378,8 +13378,8 @@
       "keyword_match": "之前講",
       "context": "但未來還未必是這樣子 事實上你想想看，我們之前講過的 GAN 我認為 GAN 就是一種 structural learning 如果你把 Discriminator 看作是 evaluation function 就是我們之前講的，在 structural learning 裡面 你有一個 problem 1，你要找出一個 evaluation function 這個 Discriminator，我們就可以把它看作是 evaluation function 所以我們就知道 problem 1 要怎麼做 那最困難的 problem 2，要解一個 inference 的問題 我們要窮舉所有我們未知",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題寫著「Is structured learning practical?」且項目「Considering GAN」，並把 Discriminator 標為「Evaluation Function f(x)」——這看起來是結構式學習主題中以 GAN 當例子，而非「GAN Lecture 1 (2018): Introduction」的入門課投影片。"
     },
     {
       "source": "rZzfqkfZhY8",
@@ -13392,8 +13392,8 @@
       "keyword_match": "上課",
       "context": "有了生成式AI以後才有的議題 那如果你想要知道更多有關可解釋性人工智慧的知識的話 那過去的機器學習課堂都會花兩堂課的時間 講可解釋的人工智慧 那我把課堂的這個上課錄影的連結 放在這些投影片上給大家參考 那在以下的課程 我們只會專注在跟語言模型有關的部分 而且我們不會深入探討它背後的技術 我只會講說我們可以解釋什麼東西 但不會深入講它的技術 不會講這個解釋是怎麼被得到的 我們可以解釋什麼",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「更多有關可解釋性人工智慧的知識」，並顯示兩個縮圖與連結：左為「EXPLAINABLE MACHINE LEARNING Hung-yi Lee 李宏毅」，下方文字標註「[機器學習2021] 可解釋機器學習 (Explainable ML) (上)」，連結 https://youtu.be/WQY8svaQfTI...；右為「GLOBAL EXPLANATION: EXPLAIN THE WHOLE MODEL」，下方文字標註「[機器學習2021] 可解釋機器學習 (Explainable ML) (下)」，連結 https://youtu.be/0ayIpqbdHYQ...。並未出現「解剖大型語言模型」或 2025 課程相關資訊。"
     },
     {
       "source": "rZzfqkfZhY8",
@@ -13434,8 +13434,8 @@
       "keyword_match": "過去我已經講",
       "context": "觀察GPT-2裡面每一個神經元的反應 然後叫GPT-4寫一下報告說 為什麼GPT-2會有這樣的反應 所以你其實可以用AI來解釋AI的行為 那過去我已經講過這段課程 那我就把上課的錄影留在投影片上 如果有興趣知道AI怎麼解釋 AI的同學可以看這兩個影片 剛才講了很多語言模型可解釋性的方法 其實語言模型的解釋 可以用更容易的方式得到 怎麼說呢 語言模型今天都會講話了",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「用 AI (GPT-4) 來解釋 AI (GPT-2)」，並直接貼了兩支YouTube影片連結與縮圖（https://youtu.be/GBXm3OqRAgg… 與 https://youtu.be/OOvhBlHlTE…），未出現「第10講：今日的語言模型是如何做文字接龍的」之標題或連結。第二張只寫「其實語言模型的可解釋性可以用更容易的方式得到……」也未指向該講。"
     },
     {
       "source": "rZzfqkfZhY8",
@@ -13448,8 +13448,8 @@
       "keyword_match": "上課",
       "context": "然後叫GPT-4寫一下報告說 為什麼GPT-2會有這樣的反應 所以你其實可以用AI來解釋AI的行為 那過去我已經講過這段課程 那我就把上課的錄影留在投影片上 如果有興趣知道AI怎麼解釋 AI的同學可以看這兩個影片 剛才講了很多語言模型可解釋性的方法 其實語言模型的解釋 可以用更容易的方式得到 怎麼說呢 語言模型今天都會講話了 想要知道他為什麼會做這樣的決策",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片標題為「用 AI (GPT-4) 來解釋 AI (GPT-2)」，並直接貼了兩個YouTube連結與縮圖，分別顯示「用 AI 來解釋 AI」與「用 AI 解釋 AI 方法概覽」，網址為 https://youtu.be/GBXm3OqRAgg?... 與 https://youtu.be/OOvhBlHlITE?...；未出現「第10講：今日的語言模型是如何做文字接龍的」或Transformer相關課名。"
     },
     {
       "source": "s06mSAGN4gM",
@@ -13518,8 +13518,8 @@
       "keyword_match": "去年的課",
       "context": "Unsupervised RLVR 可以運作得好的情境 所以讓 AI 自己定 Loss 往往搭配 TTT 一起使用 這個 Test-Time Training 其實我們在去年的課程 也是有講過的 所以如果你想知道 更多 Test-Time Training 相關的事情 請參見生成式人工智慧 與機器學習導論 2025 的第八講 我們把連結放在右下角 給大家參考 好，接下來要回答一個問題",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片右下角明確標示「【生成式人工智慧與機器學習導論2025】第 8 講：通用模型的終身學習 (Fine-tuning, Model Editing, Model Merging, Test-Time Training)」，並附上 YouTube 連結 https://www.youtube.com/watch?v=EnWz5XuOnIQ&t=5764s；頁面主題也標註 Test-time Training (TTT)，與第 9 講不符。"
     },
     {
       "source": "s06mSAGN4gM",
@@ -13532,8 +13532,8 @@
       "keyword_match": "第八講",
       "context": "也是有講過的 所以如果你想知道 更多 Test-Time Training 相關的事情 請參見生成式人工智慧 與機器學習導論 2025 的第八講 我們把連結放在右下角 給大家參考 好，接下來要回答一個問題 剛才我們不是說 Entropy 好像是沒有辦法計算的嗎 那實際上我們是怎麼把 Entropy 當作一個 Loss 去 Minimize 它 然後讓 AI 自己訓練自己的呢",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "NO",
+      "visual_evidence": "投影片左下角明確寫「【生成式人工智慧與機器學習導論2025】第 8 講：通用模型的終身學習 (Fine-tuning, Model Editing, Model Merging, Test-Time Training)」，右下角也有連結 https://www.youtube.com/watch?v=EnWz5XuOnIQ&t=5764s；主標題與插圖皆在講 Test-time Training。"
     },
     {
       "source": "s06mSAGN4gM",
@@ -13574,8 +13574,8 @@
       "keyword_match": "過去的課",
       "context": "它會輸出下一個 Token 那我們把這個函式叫做 F 未完成的句子叫做 X 輸出就是 F of X 那在過去的課程裡面 我們花了很多時間講說這個 F 呢 它是怎麼運作的 我們也跟大家剖析 F 內部的結構長什麼樣子 但我們一直沒有講 F 是怎麼被找出來的 那今天我們就是要講這個生成式人工智慧裡面最核心的這個 F 可以輸入未完成的句子 預測下一個 Token 的這個 F 是怎麼透過資料被尋找出來的",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "ERROR <urlopen error [WinError 10060] 連線嘗試失敗，因為連線對象有一段時間並未正確回應，或是連線建立失敗，因為連線的主機無法回應。>"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13588,8 +13588,8 @@
       "keyword_match": "過去的課",
       "context": "找做第三步 第三步就是找出一個最好的函式 那第一步跟第二步呢 他們並沒有先後關係 那我在過去的課程裡面 通常是先講我有哪些選擇 才講我要找什麼 那助教在講解作業的時候 也是先講我有哪些選擇 再講我要找什麼 不過後來我發現說 先講我要找什麼 這步驟可能比較順一點",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "no frames"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13602,8 +13602,8 @@
       "keyword_match": "上課",
       "context": "才講機器學習的原理 好,那怎麼知道一個函式好不好呢 這邊就根據我們剛才講的 預測一段投影片要講多長這個任務來做說明 我們有一些老師過去上課的投影片 比如說機器學習 2021 的投影片 我們也知道根據這份投影片 老師會講了多久 你就上 YouTube 頻道去看一下 每堂課講多久 那你就知道每堂課講了多長 那我們現在呢 有了這些投影片之後",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13616,8 +13616,8 @@
       "keyword_match": "第一堂",
       "context": "它代表說這個函式預測這份投影片 李宏毅老師會講的時間的長度 有了這個預測的時長 我們就可以去計算跟真實的正確答案的差距 比如說給機器學習 2021 第一堂課投影片 實際上上課時長是 100 分鐘 這個 F 輸出 99 分鐘 那它的差距就是 99-100 我們這邊取平方等於 1 那對於其他課程你都可以做一樣的事情 可以計算預測時長跟上課時長之間差距的平方 然後呢我們再把這些差距的平方呢 把它平均起來",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13630,8 +13630,8 @@
       "keyword_match": "第 0 講",
       "context": "上課的時長 那我們得要有一些 validation 驗證的資料 我們也許可以拿這一門課 這門課目前已經上了第 0 講到第四講 所以上過 5 次課了 我們把第 0 講到第四講的內容 拿出來當做驗證的 validation 的資料集 好那我們知道說過去上的 5 堂課 第 0 講到第五講投影片的頁數 我們也知道上課的時長 這個都是真實的數字 然後呢我們把這些數字",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13644,8 +13644,8 @@
       "keyword_match": "第 0 講",
       "context": "所以上過 5 次課了 我們把第 0 講到第四講的內容 拿出來當做驗證的 validation 的資料集 好那我們知道說過去上的 5 堂課 第 0 講到第五講投影片的頁數 我們也知道上課的時長 這個都是真實的數字 然後呢我們把這些數字 帶到我們找出來的函式裡面 我們把  x_1  帶 27、35、97 看會得到什麼數字 分別得到 50、63 跟 167 你看這個結果就發現",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13658,8 +13658,8 @@
       "keyword_match": "過去的課",
       "context": "所以 Backpropagation 其實就是 Gradient Descent 的 一種方法而已 它跟 Gradient Descent 沒有本質上的差異 那如果你想要知道什麼是 Backpropagation 的話 可以參考我過去的課程 那我把課程的錄影放在這邊 給大家參考 那現在如果你在實作上 你可能不容易碰到 Backpropagation 這件事了 因為 Backpropagation 這件事情 都是在 Deep Learning Framework 裡面 有幫你 implement 的 所以我這邊就先暫時不講",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13686,8 +13686,8 @@
       "keyword_match": "上課",
       "context": "比如說頁數字數等等 來預測李宏毅老師這堂課講課的時間 我們先匯入必要的函式庫 然後接下來 我們已經收集了李宏毅ll老師過去的上課的資料 然後有統計出在機器學習 2021 這門課裡面 每一堂課投影片的頁數 還有那一堂課講了多長 所以這邊有機器學習這門課的資料 還有生成式人工智慧導論 2024 的資料 還有我們現在這一堂課 這一門課從第 0 講到第 14 講 總共 5 堂課的資料",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13700,8 +13700,8 @@
       "keyword_match": "第 0 講",
       "context": "還有那一堂課講了多長 所以這邊有機器學習這門課的資料 還有生成式人工智慧導論 2024 的資料 還有我們現在這一堂課 這一門課從第 0 講到第 14 講 總共 5 堂課的資料 那這邊記載的每一個數字 就是這個投影片的頁數 然後這邊記載的每一個數字 就是課程的時長 那你直接在我的課程網站上 都可以找到這些資訊 那收集這些資訊呢",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Taj1eHmZyWw",
@@ -13742,8 +13742,8 @@
       "keyword_match": "我們在開學講過",
       "context": "我們先講 Bagging 這個方法 注意一下等一下除了會講 Bagging 之外還會講 Boosting Bagging 和 Boosting 使用的場合是不太一樣的 這個大家要特別注意一下 複習一下我們在開學講過的東西 我們開學講過做 Machine Learning 的時候有 Bias 和 Variance 的 trade-off 如果有一個很簡單的 Model 我們會有很大的 Bias、比較小的 Variance 如果我們有複雜的 Model 可能是小的 Bias、大的 Variance 在這兩者的組合下，我們會看到我們的 Error rate 隨著 Model 的複雜度增加逐漸下降再逐",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "TigfpYPJk1s",
@@ -13816,8 +13816,8 @@
         "A3Yx35KrSN0",
         "Q9cNkUPXUB8"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "uhNsUCb2fJI",
@@ -13830,8 +13830,8 @@
       "keyword_match": "上課",
       "context": "對於大型語言模型是非常重要的 那今天講的是一個簡化的版本 並不是Transformer的全部 如果你真的想要更深入的瞭解Transformer 那我這邊附上了兩段過去上課的錄影 大家可以看這兩段上課的錄影 更瞭解Transformer內部運作的原理 好,那我們現在先來看一下Transformer這個模型 它整體運作的過程 我們先來對Transformer做一個概述 當一句話被語言模型讀進去的時候 經過了哪些步驟才得到輸出的機率分佈呢? 首先第一個步驟叫做Tokenization",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "uhNsUCb2fJI",
@@ -13847,8 +13847,8 @@
         "A3Yx35KrSN0",
         "inebiWdQW-4"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "uhNsUCb2fJI",
@@ -13931,8 +13931,8 @@
       "keyword_match": "過去的課",
       "context": "大的 Network Pruning 完 變得小的 Network 一樣的正確率 那至於大的 Network 為什麼比較好 Train 那也可以參看以下這個影片的連結 我在過去的課程有試圖解釋這件事 好 但是為什麼大的 Network 比較好 Train 呢 那這邊有一個假說叫做大樂透假說 那不過它既然叫做假說 就代表說它不算是完全被實證的一個方 不算是一個被實證的理論 如果它是被已經被證明出來的 那它就是一個理論 但它現在只是一個假說而已",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "v12IKvF6Cj8",
@@ -13945,8 +13945,8 @@
       "keyword_match": "上課",
       "context": "人覺得不好的答案產生的機率低一點 增強式學習的概念就是這樣 說完了 假設你想要真的瞭解增強式學習的內涵的話 可以看我們過去機器學習的上課錄影 而這個ChatGPT在做這個RLHF在做增強式學習的時候 他微調參數的演算法叫做PPO 如果你真的想知道PPO是什麼的話 我也有一個系列的影片 在講PPO 那我把他的連結留在投影片上 給大家參考 但本質上他的概念就是",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "v12IKvF6Cj8",
@@ -14001,8 +14001,8 @@
       "keyword_match": "第一篇",
       "context": "直接就是這個藍色的語言模型 讓語言模型自己來教導自己 那其實在那個Claude的paper裡面 這個Constitutional AI那篇paper裡面 這應該是我這邊引用的第一篇文章 這個早在2022年的12月 這個Claude就有用這樣子的方法 用AI自己的模型來提供自己回饋的方法 來強化Claude的能力 因為語言模型有反省的能力 所以今天其實是有機會讓語言模型自己給自己提供回饋 那我記得今年年初的時候 這個Meta也有一篇叫做Self-rewarding的model",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "VqB8zMujdjM",
@@ -14032,8 +14032,8 @@
         "fDQaadKysSA",
         "Ll-wk8x3G_g"
       ],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "VqB8zMujdjM",
@@ -14046,8 +14046,8 @@
       "keyword_match": "上課",
       "context": "看看它能做到什麼樣的程度 這個就是今天上課的內容 前兩週我們講的是比較科普的內容 講 AI agent 下次上課我們就要進入語言模型比較核心的部分 我們要看語言模型內部 它是怎麼做 inference 的 所以下次在上課之前 請先預習 至少先預習 我放在投影片上的這一部影片 這個是機器學習導論的第三講 那你要看完第三講",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "VqB8zMujdjM",
@@ -14060,8 +14060,8 @@
       "keyword_match": "上課",
       "context": "講 AI agent 下次上課我們就要進入語言模型比較核心的部分 我們要看語言模型內部 它是怎麼做 inference 的 所以下次在上課之前 請先預習 至少先預習 我放在投影片上的這一部影片 這個是機器學習導論的第三講 那你要看完第三講 你才能夠知道 下週要講的內容是什麼 好那以上就是",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "VqB8zMujdjM",
@@ -14074,8 +14074,8 @@
       "keyword_match": "第三講",
       "context": "所以下次在上課之前 請先預習 至少先預習 我放在投影片上的這一部影片 這個是機器學習導論的第三講 那你要看完第三講 你才能夠知道 下週要講的內容是什麼 好那以上就是 今天要跟大家分享的內容",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "VqB8zMujdjM",
@@ -14088,8 +14088,8 @@
       "keyword_match": "第三講",
       "context": "請先預習 至少先預習 我放在投影片上的這一部影片 這個是機器學習導論的第三講 那你要看完第三講 你才能夠知道 下週要講的內容是什麼 好那以上就是 今天要跟大家分享的內容",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "VuQUF1VVX40",
@@ -14116,8 +14116,8 @@
       "keyword_match": "第九講",
       "context": "這些生成式人工智慧是怎麼被打造出來的 你也有機會自己訓練生成式人工智慧 那前八講呢 主要以文字互動為主 那第九講跟第十講 我們會講影像跟語音 那有關這門課的所有的資訊 包括上課錄影 課程投影片 還有作業的講解 你其實都可以在課程的公開網頁找到 那我把課程的公開網頁 放在這頁投影片上面",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "vXb2QYOUzl4",
@@ -14130,8 +14130,8 @@
       "keyword_match": "上課",
       "context": "大家好，那我們就來上課吧 今天的課呢，我們是想要跟大家講說 怎麼加快語言模型的生成速度 那今天這一堂課呢，是預設你已經非常清楚 語言模型內部的運作原理 你知道 Transformer 是怎麼運作的 那這一堂課是要跟你講說 在你已經知道 Transformer 已經怎麼運作的前提之下 我們怎麼加快生成的速度",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "vXb2QYOUzl4",
@@ -14200,8 +14200,8 @@
       "keyword_match": "上課",
       "context": "我記得它的 reward 是速度，速度越快 reward 就會越高 所以它會拼命想要加速，那撞到東西就會減速，它會避免撞到東西 比如說前面有些車然後它就避開 所以最後的結果是滿驚人的 這學期上課就上到這邊 我本來想要講一個感性的結論但是沒有甚麼感性的結論 已經快下課了不太好講甚麼感性的結論 那我想要講一下 其實這學期有個東西沒有教，知道是甚麼嗎 是 Machine Learning 裡面比較偏向統計理論的部分 比如說 VC-dimension 但是電機系未來會有其他課教 Machine Learning 裡面比較統計的部分 就我所知王老師有要開統計與機器學習",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "W8XF3ME8G2I",
@@ -14214,8 +14214,8 @@
       "keyword_match": "上課",
       "context": "如果你覺得我教的太難了，聽不懂 沒有關係，余老師要開機器學習導論是給大學生的 所以以後可以先修機器學習導論 以後電機系會有很多機器學習的課 我上課的內容跟軒田的機器學習的基石還有技法 其實我是盡量有錯開的 就算你是修過基石和技法 相信你在這門課裡面應該也是有聽到不少東西 或者是你之後再去聽基石跟技法 你會發現我講的東西跟軒田講的東西，其實是我盡量做到沒有太多東西重複 這學期上課就上課這邊，謝謝大家 臺灣大學人工智慧中心科技部人工智慧技術暨全幅健康照護聯合研究中心http://aintu.tw",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "WeHM2xpYQpw",
@@ -14431,8 +14431,8 @@
       "keyword_match": "上課",
       "context": "RMSProp，我覺得是一個滿神奇的方法 因為你好像，找不到它的 paper 因為這個在 Hinton 的那個 MOOC 的 course 裡面，他提出來 他在他的線上課程裡面提出一個方法 大家要 cite 的時候，要 cite 那個線上課程的連結 這招還真的有用 這個 RMSProp 是這樣子做的 我們現在把 這個固定的 learning rate 除掉一個值，我們稱之為 σ 這個 σ 是甚麼呢？ 在第一個時間點",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Xnil63UDW2o",
@@ -14533,8 +14533,8 @@
       "keyword_match": "第十講",
       "context": "進行 複習 假設你覺得看2021年機器學習的影片總共有四步 太花時間的話 那你可以選擇看生成式AI導論2024年的第十講 那我們花不到40分鐘的時間 跟你講一下什麼是transformer 那今天這一堂課呢 也跟機器學習的可解釋性非常有關 那在機器學習2021的課程裡面 也已經講過機器學習的可解釋性 今天這一堂課要講的內容 跟過去所講的內容",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Xnil63UDW2o",
@@ -14547,8 +14547,8 @@
       "keyword_match": "過去所講",
       "context": "也跟機器學習的可解釋性非常有關 那在機器學習2021的課程裡面 也已經講過機器學習的可解釋性 今天這一堂課要講的內容 跟過去所講的內容 並不會重複 那你沒有看過去這兩堂課的內容 今天的內容你應該也聽得懂 那你可以上完這門課以後 再回去看機器學習2021 講的這個機器學習 可解釋性的兩堂課的內容 你會有更多的收穫",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Xnil63UDW2o",
@@ -14561,8 +14561,8 @@
       "keyword_match": "第11講",
       "context": "講的這個機器學習 可解釋性的兩堂課的內容 你會有更多的收穫 那在生成式AI導論 2024的第11講 大型語言模型在講什麼 也剖析了大型語言模型背後 運作的機制 講的是更新的研究 今天要講的內容 跟2024年去年講的內容 沒有任何重疊的地方 所以你可以聽完這門課",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "Xnil63UDW2o",
@@ -14690,8 +14690,8 @@
       "keyword_match": "第一堂",
       "context": "那這個是 RL 最常見的一種解說方式 那接下來要告訴你說 RL 跟機器學習的 Framework 它們之間的關係是什麼 開學第一堂課就告訴你說 Machine Learning 就是三個步驟 第一個步驟 你有一個 Function 那個 Function 裡面有一些未知數 Unknown 的 Variable 這些未知數是要被找出來的 第二步 訂一個 Loss Function",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "XysGHdNOTbg",
@@ -14972,8 +14972,8 @@
       "keyword_match": "上課",
       "context": "強迫中間的向量 是Normal Distribution 所以這個就是VAE的概念 如果想要知道VAE更多背後的原理 請見過去上課的錄影 接下來講Flow-Based Model 等一下每一個模型 都只有一頁投影片而已 Flow-Based Model是怎麼做的呢 它跟剛才VAE反過來 我們先來想Encoder 我們能不能夠訓練一個Encoder 吃一張圖片",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "z83Edfvgd9g",
@@ -14986,8 +14986,8 @@
       "keyword_match": "前面講",
       "context": "那這個就是Gan 講到這邊大家有問題想要問嗎 那你說為什麼要叫Decoder 然後不叫Generator 為了要跟前面講的VaE感覺比較一致 所以我就把它命名為Decoder 但是這真的只是名稱而已 我們也可以把它改成叫做Generator 希望這樣回答到你的問題 這只是名詞的不同而已 如果你想要知道Gan的話呢 過去花了很多很多時間講Gan 這個講的話可以大概講個10個小時左右",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "z83Edfvgd9g",
@@ -15000,8 +15000,8 @@
       "keyword_match": "過去花了很多很多時間講",
       "context": "我們也可以把它改成叫做Generator 希望這樣回答到你的問題 這只是名詞的不同而已 如果你想要知道Gan的話呢 過去花了很多很多時間講Gan 這個講的話可以大概講個10個小時左右 大家可以慢慢看 有一個Gan的系列的錄影 好那這張投影片呢 是一次速覽VaE Flow-based Model 跟Diffusion Model的差異 那它們的共通性就是 它們都有一個Encode的機制",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "z95ZYgPgXOY",
@@ -15028,8 +15028,8 @@
       "keyword_match": "我們要講在 machine learning 那一門課沒有講過",
       "context": "然後你會不斷的去計算 R of tao 的平均值，然後你會把你的這個平均值，當作你的 b 來用 這樣就可以讓你在 training 的時候 你今天，這個 gradient log probability 乘上前面這一項，是有正有負的，這個是第一個 tip 第二個 tip 我們在 machine learning 那一門課沒有講到，前面那的東西在 machine learning 講過了 今天我們要講在 machine learning 那一門課沒有講過的 tip，這個 tip 是這樣子 今天你應該要給每一個 action，合適的 credit 什麼意思呢，如果我們看今天下面這個式子的話 我們原",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     },
     {
       "source": "zzbr1h9sF54",
@@ -15042,8 +15042,8 @@
       "keyword_match": "第一篇",
       "context": "15分鐘 Train ResNet 一分鐘 Train Imagenet 等等 這為什麼他們可以做到那麼快 就是因為他們 Batch Size 是真的開很大 比如說在第一篇 Paper 裡面 Batch Size 裡面有三萬筆 Example 這樣 Batch Size 開很大 Batch Size 開大 真的就可以算很快 你可以在很短的時間內看到大量的資料 那他們需要有一些特別的方法來解決 Batch Size 可能會帶來的劣勢 好 那最後想要跟大家下課前 想要跟大家分享的另外一個技術",
       "alt_candidates": [],
-      "visual_verified": null,
-      "visual_evidence": null
+      "visual_verified": "UNKNOWN",
+      "visual_evidence": "segment download failed"
     }
   ]
 }

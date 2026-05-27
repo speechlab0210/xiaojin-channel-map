@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>李宏毅老師 YouTube 課程地圖｜小金製作</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="把李宏毅老師 YouTube 頻道全部 482 部教學影片，整理出影片之間「上次講過」、「之前介紹過」的相互引用，畫成一張可互動的課程地圖。">
+<link rel="stylesheet" href="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.umd.js" as="script">
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
+<script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "PingFang TC", sans-serif; background: #0f1419; color: #e6e6e6; }
+  #app { display: grid; grid-template-columns: 260px 1fr; grid-template-rows: 56px 1fr; height: 100vh; }
+  @media (max-width: 700px) { #app { grid-template-columns: 200px 1fr; } }
+  header { grid-column: 1 / 3; background: #1a1f2e; border-bottom: 1px solid #2a3046; padding: 8px 16px; display: flex; align-items: center; gap: 16px; }
+  header h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  header .meta { color: #8a93a8; font-size: 12px; }
+  header .credit { margin-left: auto; color: #8a93a8; font-size: 11px; }
+  aside { background: #131826; border-right: 1px solid #2a3046; padding: 12px; overflow-y: auto; }
+  aside h2 { margin: 0 0 8px 0; font-size: 13px; color: #aab2c8; text-transform: uppercase; letter-spacing: 0.5px; }
+  aside .row { margin-bottom: 16px; }
+  aside .stats { font-size: 12px; color: #c5cdd6; }
+  aside .stats div { margin: 3px 0; }
+  aside input { width: 100%; padding: 6px 8px; background: #0f1419; color: #e6e6e6; border: 1px solid #2a3046; border-radius: 4px; font-size: 12px; }
+  aside .courses { font-size: 11px; }
+  aside .courses label { display: block; padding: 3px 0; cursor: pointer; }
+  aside .courses input[type=checkbox] { margin-right: 6px; }
+  aside .courses .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  #cy { background: #0f1419; }
+  #details { position: absolute; top: 70px; right: 14px; width: 380px; max-height: 80vh; overflow-y: auto; background: #1a1f2e; border: 1px solid #2a3046; border-radius: 8px; padding: 14px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,.5); }
+  #details h3 { margin: 0 0 6px 0; font-size: 14px; }
+  #details a { color: #8ab4f8; text-decoration: none; word-break: break-all; }
+  #details .field { margin: 8px 0; font-size: 12px; }
+  #details .field label { color: #8a93a8; display: block; margin-bottom: 2px; }
+  #details .close { float: right; cursor: pointer; color: #8a93a8; background: none; border: none; font-size: 14px; }
+  #details .ref-list { margin-top: 12px; }
+  #details .ref-card { background: #0f1419; border: 1px solid #2a3046; border-radius: 4px; padding: 6px 8px; margin: 4px 0; font-size: 11px; }
+  #details .ref-card .arrow { color: #8a93a8; font-size: 10px; }
+  #details .conf-HIGH { color: #4ade80; }
+  #details .conf-MEDIUM { color: #fbbf24; }
+  #details .conf-LOW { color: #f87171; }
+  .footer-note { font-size: 11px; color: #8a93a8; margin-top: 10px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>李宏毅老師 YT 課程地圖</h1>
+    <span class="meta" id="header-meta">載入中…</span>
+    <span class="credit">小金製作 · 大金老師沒檢查過 AI 可能有錯</span>
+  </header>
+  <aside>
+    <div class="row">
+      <h2>搜尋</h2>
+      <input id="search" placeholder="輸入影片標題關鍵字..." />
+    </div>
+    <div class="row stats" id="stats"></div>
+    <div class="row">
+      <h2>顯示模式</h2>
+      <label><input type="radio" name="layout" value="cose" checked> 力導向 (自動聚類)</label><br>
+      <label><input type="radio" name="layout" value="grid"> 網格 (依課程)</label><br>
+      <label><input type="radio" name="layout" value="circle"> 圓形 (時間軸)</label><br>
+    </div>
+    <div class="row">
+      <h2>連線過濾</h2>
+      <label><input type="checkbox" id="filter-high" checked> HIGH confidence</label><br>
+      <label><input type="checkbox" id="filter-medium" checked> MEDIUM confidence</label><br>
+      <label><input type="checkbox" id="filter-low" checked> LOW confidence</label><br>
+    </div>
+    <div class="row">
+      <h2>課程過濾</h2>
+      <div class="courses" id="courses"></div>
+    </div>
+    <div class="footer-note">
+      Hover 看標題、點擊看詳情與所有引用<br>
+      箭頭：A→B 表示 A 影片裡提到 B
+    </div>
+  </aside>
+  <div id="cy"></div>
+</div>
+<div id="details">
+  <button class="close" onclick="document.getElementById('details').style.display='none'">✕</button>
+  <h3 id="d-title"></h3>
+  <div class="field"><label>YouTube</label><a id="d-link" target="_blank"></a></div>
+  <div class="field"><label>課程</label><span id="d-course"></span></div>
+  <div class="field"><label>長度</label><span id="d-duration"></span></div>
+  <div class="ref-list">
+    <h2 style="font-size:12px;color:#aab2c8;margin:14px 0 4px;">本片提到的其他影片 (outgoing)</h2>
+    <div id="d-outgoing"></div>
+    <h2 style="font-size:12px;color:#aab2c8;margin:14px 0 4px;">被其他影片提到 (incoming)</h2>
+    <div id="d-incoming"></div>
+  </div>
+</div>
+
+<script>
+const COURSE_COLORS = [
+  '#5b9bd5', '#ed7d31', '#a5a5a5', '#ffc000', '#4472c4',
+  '#70ad47', '#264478', '#9e480e', '#636363', '#997300',
+  '#255e91', '#43682b', '#7030a0', '#c00000', '#00b050',
+  '#ff6699', '#3399cc', '#cc6633', '#669900', '#993366',
+  '#6633cc', '#cc3399', '#33cccc', '#66cc99'
+];
+
+async function init() {
+  const data = await fetch('graph.json').then(r => r.json());
+  document.getElementById('header-meta').textContent =
+    `${data.metadata.video_count} 部影片 · ${data.metadata.edge_count} 條引用`;
+
+  // course -> color map
+  const courseColor = {};
+  data.metadata.playlists.forEach((p, i) => { courseColor[p.id] = COURSE_COLORS[i % COURSE_COLORS.length]; });
+
+  // Stats
+  const inDeg = {}, outDeg = {};
+  data.edges.forEach(e => { inDeg[e.target] = (inDeg[e.target]||0)+1; outDeg[e.source] = (outDeg[e.source]||0)+1; });
+  document.getElementById('stats').innerHTML = `
+    <div>節點數 (有引用)：<b>${Object.keys({...inDeg, ...outDeg}).length}</b></div>
+    <div>引用邊數：<b>${data.edges.length}</b></div>
+    <div>HIGH confidence: <b>${data.edges.filter(e=>e.confidence==='HIGH').length}</b></div>
+    <div>MEDIUM: <b>${data.edges.filter(e=>e.confidence==='MEDIUM').length}</b></div>
+    <div>LOW: <b>${data.edges.filter(e=>e.confidence==='LOW').length}</b></div>
+  `;
+
+  // Course filter
+  const courses = data.metadata.playlists;
+  const courseEl = document.getElementById('courses');
+  courseEl.innerHTML = courses.map(p =>
+    `<label><input type="checkbox" data-pid="${p.id}" checked><span class="swatch" style="background:${courseColor[p.id]}"></span>${p.title.slice(0,30)}${p.title.length>30?'…':''} (${p.video_count})</label>`
+  ).join('');
+
+  // Build Cytoscape elements
+  // Only include nodes that have at least one edge (otherwise force-directed is dominated by isolates)
+  const referenced = new Set();
+  data.edges.forEach(e => { referenced.add(e.source); referenced.add(e.target); });
+
+  const cyEls = [];
+  const nodesById = {};
+  data.nodes.forEach(n => { nodesById[n.id] = n; });
+
+  // Compute incoming reference count for sizing
+  const incomingByNode = {};
+  data.edges.forEach(e => { incomingByNode[e.target] = (incomingByNode[e.target]||0)+1; });
+
+  data.nodes.forEach(n => {
+    if (!referenced.has(n.id)) return; // skip lonely nodes for now (later: optional show)
+    const inc = incomingByNode[n.id] || 0;
+    // Short label: extract "第N講" if present, else first 10 chars
+    const m = n.title.match(/第\s*[0-9一二三四五六七八九十]+\s*[講課堂]/);
+    let shortLabel = m ? m[0] : n.title.replace(/【[^】]+】/g, '').slice(0, 10);
+    cyEls.push({
+      data: {
+        id: n.id,
+        label: shortLabel,
+        title: n.title,
+        course: n.course,
+        courseId: n.course_id,
+        color: courseColor[n.course_id] || '#888',
+        position: n.course_position,
+        size: 18 + Math.min(40, inc * 3),
+        incomingCount: inc,
+      },
+    });
+  });
+
+  data.edges.forEach((e, i) => {
+    cyEls.push({
+      data: {
+        id: `e${i}`,
+        source: e.source,
+        target: e.target,
+        confidence: e.confidence,
+        evidence: e.evidence,
+        sourceT: e.source_t,
+        category: e.category,
+        keyword: e.keyword_match,
+        context: e.context,
+      },
+    });
+  });
+
+  window.cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: cyEls,
+    style: [
+      {
+        selector: 'node',
+        style: {
+          'background-color': 'data(color)',
+          'label': 'data(label)',
+          'color': '#e6e6e6',
+          'font-size': 9,
+          'font-family': '"Microsoft JhengHei","PingFang TC",sans-serif',
+          'text-valign': 'bottom',
+          'text-halign': 'center',
+          'text-margin-y': 3,
+          'width': 'data(size)',
+          'height': 'data(size)',
+          'text-wrap': 'wrap',
+          'text-max-width': 100,
+          'border-width': 1.5,
+          'border-color': '#0f1419',
+          'text-background-color': '#0f1419',
+          'text-background-opacity': 0.85,
+          'text-background-padding': 2,
+          'text-opacity': 0,
+        },
+      },
+      {
+        selector: 'node[incomingCount >= 5]',
+        style: { 'text-opacity': 1 },
+      },
+      {
+        selector: 'edge',
+        style: {
+          'width': 1.5,
+          'line-color': '#3f4a63',
+          'target-arrow-color': '#5a6987',
+          'target-arrow-shape': 'triangle',
+          'curve-style': 'bezier',
+          'opacity': 0.55,
+        },
+      },
+      {
+        selector: 'edge[confidence = "HIGH"]',
+        style: { 'line-color': '#5a6987', 'target-arrow-color': '#8ab4f8', 'opacity': 0.75 },
+      },
+      {
+        selector: 'edge[confidence = "MEDIUM"]',
+        style: { 'line-color': '#3f4a63', 'target-arrow-color': '#fbbf24', 'opacity': 0.55 },
+      },
+      {
+        selector: 'edge[confidence = "LOW"]',
+        style: { 'line-color': '#3f4a63', 'target-arrow-color': '#f87171', 'opacity': 0.4, 'line-style': 'dashed' },
+      },
+      {
+        selector: 'node:selected',
+        style: { 'border-width': 3, 'border-color': '#8ab4f8' },
+      },
+      {
+        selector: '.highlighted',
+        style: { 'border-width': 3, 'border-color': '#fbbf24', 'background-color': '#fbbf24' },
+      },
+      {
+        selector: '.faded',
+        style: { 'opacity': 0.15 },
+      },
+    ],
+    layout: { name: 'cose', animate: false, fit: true, idealEdgeLength: 140, nodeRepulsion: 14000, gravity: 0.4, padding: 30 },
+    wheelSensitivity: 0.2,
+    minZoom: 0.1,
+    maxZoom: 4,
+  });
+
+  const cy = window.cy;
+  cy.on('tap', 'node', evt => {
+    const n = evt.target;
+    showDetails(n.data('id'), nodesById, data.edges);
+  });
+
+  cy.on('mouseover', 'node', evt => {
+    const n = evt.target;
+    const neighborhood = n.neighborhood().union(n);
+    cy.elements().difference(neighborhood).addClass('faded');
+    neighborhood.removeClass('faded');
+    // show label on hover even if small
+    n.style({ 'text-opacity': 1 });
+  });
+  cy.on('mouseout', 'node', evt => {
+    cy.elements().removeClass('faded');
+    const n = evt.target;
+    if ((n.data('incomingCount')||0) < 5) n.style({ 'text-opacity': 0 });
+  });
+
+  // Show labels at high zoom
+  cy.on('zoom', () => {
+    const z = cy.zoom();
+    cy.nodes().forEach(n => {
+      const inc = n.data('incomingCount') || 0;
+      const shouldShow = z > 1.2 || inc >= 5;
+      n.style({ 'text-opacity': shouldShow ? 1 : 0 });
+    });
+  });
+
+  // Layout switcher
+  document.querySelectorAll('input[name=layout]').forEach(r => {
+    r.addEventListener('change', e => {
+      const v = e.target.value;
+      const opts = v === 'cose' ? { name: 'cose', animate: false, idealEdgeLength: 80, nodeRepulsion: 4500 } :
+                   v === 'grid' ? { name: 'grid', animate: false, sort: (a, b) => (a.data('courseId') || '').localeCompare(b.data('courseId') || '') } :
+                   { name: 'circle', animate: false };
+      cy.layout(opts).run();
+    });
+  });
+
+  // Search
+  document.getElementById('search').addEventListener('input', e => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) {
+      cy.elements().removeClass('faded').removeClass('highlighted');
+      return;
+    }
+    cy.nodes().forEach(n => {
+      const t = (n.data('title') || '').toLowerCase();
+      if (t.includes(q)) {
+        n.removeClass('faded').addClass('highlighted');
+      } else {
+        n.addClass('faded').removeClass('highlighted');
+      }
+    });
+  });
+
+  // Course filter
+  courseEl.addEventListener('change', () => {
+    const checked = new Set();
+    courseEl.querySelectorAll('input[type=checkbox]').forEach(cb => { if (cb.checked) checked.add(cb.dataset.pid); });
+    cy.nodes().forEach(n => {
+      const pid = n.data('courseId');
+      if (checked.has(pid)) { n.removeClass('faded'); } else { n.addClass('faded'); }
+    });
+  });
+
+  // Confidence filter
+  ['high', 'medium', 'low'].forEach(level => {
+    document.getElementById('filter-' + level).addEventListener('change', () => {
+      cy.edges().forEach(e => {
+        const c = (e.data('confidence') || '').toLowerCase();
+        if (!c) return;
+        const cb = document.getElementById('filter-' + c);
+        if (cb && !cb.checked) {
+          e.style({ 'display': 'none' });
+        } else {
+          e.style({ 'display': 'element' });
+        }
+      });
+    });
+  });
+}
+
+function showDetails(vid, nodesById, edges) {
+  const n = nodesById[vid];
+  if (!n) return;
+  document.getElementById('details').style.display = 'block';
+  document.getElementById('d-title').textContent = n.title;
+  document.getElementById('d-link').textContent = n.url;
+  document.getElementById('d-link').href = n.url;
+  document.getElementById('d-course').textContent = n.course + (n.course_position ? ` (#${n.course_position})` : '');
+  const m = Math.floor((n.duration_s||0)/60), s = Math.round((n.duration_s||0)%60);
+  document.getElementById('d-duration').textContent = `${m}m ${s}s`;
+
+  const outgoing = edges.filter(e => e.source === vid);
+  const incoming = edges.filter(e => e.target === vid);
+
+  document.getElementById('d-outgoing').innerHTML =
+    outgoing.length === 0 ? '<div style="color:#8a93a8;font-size:11px;">無</div>' :
+    outgoing.map(e => refCard(e, nodesById, true)).join('');
+  document.getElementById('d-incoming').innerHTML =
+    incoming.length === 0 ? '<div style="color:#8a93a8;font-size:11px;">無</div>' :
+    incoming.map(e => refCard(e, nodesById, false)).join('');
+}
+
+function refCard(e, nodesById, outgoing) {
+  const other = outgoing ? nodesById[e.target] : nodesById[e.source];
+  if (!other) return '';
+  const arrow = outgoing ? '→' : '←';
+  const ts = Math.floor(e.source_t);
+  const sourceNode = outgoing ? nodesById[e.source] : nodesById[e.source];
+  const ytUrl = `${sourceNode.url}&t=${ts}`;
+  let visualBadge = '';
+  if (e.visual_verified === 'YES') {
+    visualBadge = '<span style="color:#4ade80;font-size:10px;">✓ 視覺驗證</span>';
+  } else if (e.visual_verified === 'NO') {
+    visualBadge = '<span style="color:#f87171;font-size:10px;">✗ 視覺打臉</span>';
+  } else if (e.visual_verified === 'PARTIAL') {
+    visualBadge = '<span style="color:#fbbf24;font-size:10px;">~ 部分</span>';
+  }
+  const visualEvLine = e.visual_evidence ? `<div style="color:#aab2c8;margin-top:3px;font-size:10px;border-left:2px solid #5a6987;padding-left:5px;">👁 ${e.visual_evidence.slice(0, 100)}</div>` : '';
+  return `<div class="ref-card">
+    <div class="arrow">${arrow} ${e.confidence ? `<span class="conf-${e.confidence}">[${e.confidence}]</span>` : ''} ${e.category||''} ${visualBadge}</div>
+    <div style="margin:3px 0;"><a href="${other.url}" target="_blank">${other.title.slice(0, 50)}</a></div>
+    <div style="color:#aab2c8;">@${ts}s · <a href="${ytUrl}" target="_blank" style="color:#8ab4f8;">跳到出處</a></div>
+    <div style="color:#c5cdd6;margin-top:3px;">「${e.evidence||''}」</div>
+    ${visualEvLine}
+  </div>`;
+}
+
+init().catch(e => {
+  document.getElementById('cy').innerHTML = `<pre style="color:#f87171;padding:20px;">${e.stack||e.message}</pre>`;
+});
+</script>
+</body>
+</html>

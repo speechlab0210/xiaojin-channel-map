@@ -92,15 +92,62 @@
   .modal button.go:hover { background: #f59e0b; }
   .modal .small { font-size: 11px; color: #5a6987; margin-top: 14px; }
 
-  /* Mobile */
+  /* Sidebar toggle button (only visible on mobile) */
+  .sidebar-toggle { display: none; position: fixed; bottom: 16px; left: 16px; z-index: 60; background: #fbbf24; color: #0f1419; border: none; width: 52px; height: 52px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+  .sidebar-toggle:active { background: #f59e0b; }
+  .sidebar-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }
+
+  /* Mobile (≤ 768px) */
   @media (max-width: 768px) {
-    #app { grid-template-columns: 1fr; grid-template-rows: 56px auto 1fr; }
-    aside { max-height: 200px; padding: 10px; }
-    aside .row { margin-bottom: 12px; }
-    aside .stat-grid { grid-template-columns: repeat(4, 1fr); }
-    #details { left: 8px; right: 8px; top: 70px; width: auto; }
-    header h1 { font-size: 14px; }
+    /* App layout: stack header + graph, sidebar becomes overlay */
+    #app { grid-template-columns: 1fr; grid-template-rows: 52px 1fr; height: 100vh; height: 100dvh; }
+
+    /* Header: compact */
+    header { padding: 0 12px; gap: 8px; }
+    header h1 { font-size: 15px; line-height: 1.15; }
+    header h1 .full { display: none; }
+    header h1 .short { display: inline; }
+    header .meta { font-size: 11px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+    header .right { gap: 6px; }
+    header a.channel { padding: 4px 8px; font-size: 12px; }
+    header .help-btn { padding: 4px 8px; font-size: 12px; }
     header .credit { display: none; }
+
+    /* Sidebar slides in from left as overlay */
+    aside { position: fixed; top: 52px; left: 0; bottom: 0; width: 80%; max-width: 320px; z-index: 50; transform: translateX(-100%); transition: transform 0.25s ease; box-shadow: 4px 0 24px rgba(0,0,0,0.5); }
+    aside.open { transform: translateX(0); }
+    aside .stat-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Show toggle button */
+    .sidebar-toggle { display: flex; }
+    .sidebar-backdrop.open { display: block; }
+
+    /* Canvas takes full remaining height */
+    #cy { width: 100vw; height: calc(100dvh - 52px); }
+
+    /* Detail panel becomes bottom sheet */
+    #details { position: fixed; top: auto; right: 0; left: 0; bottom: 0; width: 100%; max-width: 100%; max-height: 75vh; max-height: 75dvh; border-radius: 16px 16px 0 0; padding: 18px 16px 24px; box-shadow: 0 -8px 32px rgba(0,0,0,0.6); }
+    #details .close { font-size: 24px; padding: 0 8px; }
+    #details h3 { font-size: 16px; padding-right: 32px; }
+    #details .yt-btn { padding: 14px; font-size: 15px; }
+    #details .ref-card { padding: 10px 12px; }
+
+    /* Welcome modal full screen */
+    .modal-bg { padding: 12px; }
+    .modal { padding: 22px 18px; max-height: 90vh; max-height: 90dvh; overflow-y: auto; width: 100%; }
+    .modal h2 { font-size: 20px; }
+    .modal p { font-size: 13px; line-height: 1.6; }
+    .modal .legend { gap: 14px; flex-direction: column; }
+    .modal button.go { width: 100%; padding: 14px; font-size: 16px; }
+
+    /* Tooltip wider on mobile */
+    .tooltip { max-width: 90vw; font-size: 11px; }
+  }
+
+  /* Touch-friendly on touch devices regardless of width */
+  @media (hover: none) {
+    aside .courses label { padding: 8px 0; }
+    aside input[type=text] { font-size: 16px; padding: 10px 12px; } /* 16px prevents iOS zoom */
   }
 </style>
 </head>
@@ -128,7 +175,7 @@
 
 <div id="app">
   <header>
-    <h1><span class="lobster">🦞</span> 李宏毅老師 YT 課程地圖</h1>
+    <h1><span class="lobster">🦞</span><span class="full"> 李宏毅老師 YT 課程地圖</span><span class="short" style="display:none"> 課程地圖</span></h1>
     <span class="meta" id="header-meta">載入中…</span>
     <div class="right">
       <a class="channel" href="https://www.youtube.com/@HungyiLeeNTU" target="_blank">📺 看頻道</a>
@@ -136,7 +183,9 @@
       <span class="credit">小金製作 · 大金老師沒檢查過 AI 可能有錯</span>
     </div>
   </header>
-  <aside>
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="開啟選單" onclick="toggleSidebar()">☰</button>
+  <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleSidebar(false)"></div>
+  <aside id="sidebar">
     <div class="row">
       <h2>🔎 搜尋影片</h2>
       <input id="search" type="text" placeholder="輸入標題關鍵字..." />
@@ -188,6 +237,16 @@ const COURSE_COLORS = [
   '#ff6699', '#3399cc', '#cc6633', '#669900', '#993366',
   '#6633cc', '#cc3399', '#33cccc', '#66cc99'
 ];
+
+function toggleSidebar(force) {
+  const aside = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const open = (typeof force === 'boolean') ? force : !aside.classList.contains('open');
+  aside.classList.toggle('open', open);
+  backdrop.classList.toggle('open', open);
+  // Resize cytoscape after transition
+  setTimeout(() => { if (window.cy) window.cy.resize(); }, 280);
+}
 
 async function init() {
   // Show welcome on first visit
@@ -331,7 +390,16 @@ async function init() {
   const cy = window.cy;
   const tooltip = document.getElementById('tooltip');
 
-  cy.on('tap', 'node', evt => showDetails(evt.target.data('id'), nodesById, data.edges));
+  cy.on('tap', 'node', evt => {
+    showDetails(evt.target.data('id'), nodesById, data.edges);
+    // Auto-close sidebar on mobile when picking a node
+    if (window.matchMedia('(max-width: 768px)').matches) toggleSidebar(false);
+  });
+
+  // Close sidebar after course filter / search change on mobile too
+  document.getElementById('search').addEventListener('change', () => {
+    if (window.matchMedia('(max-width: 768px)').matches) toggleSidebar(false);
+  });
 
   cy.on('dbltap', 'node', evt => {
     const url = evt.target.data('url');
